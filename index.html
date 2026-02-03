@@ -7,13 +7,17 @@
   <meta name="description" content="Web Developer & Odoo Developer specializing in backend logic, ERP automation, and clean workflows. Based in Chennai, India.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo">YK.</a>
+      <a href="#" class="nav-logo">
+        <img src="images/logo.png" alt="YK Logo" class="logo-img">
+        <!-- <span class="logo-text">YK</span> -->
+      </a>
       <ul class="nav-menu">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -34,7 +38,13 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-container">
-      <div class="hero-content">
+      <div class="hero-image-wrapper" data-aos="fade-up" data-aos-duration="800">
+        <div class="profile-image-container">
+          <img src="images/profile.png" alt="Yusuf Khan" class="profile-image">
+          <div class="profile-glow"></div>
+        </div>
+      </div>
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
         <div class="hero-badge">
           <span>Open to opportunities</span>
         </div>
@@ -63,22 +73,15 @@
           </a>
         </div>
         <div class="hero-social">
-          <a href="https://github.com/Yusufi8" target="_blank" aria-label="GitHub">
+          <a href="https://github.com/Yusufi8" target="_blank" aria-label="GitHub" data-aos="zoom-in" data-aos-delay="400">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/yusuf-khan-8a1bb4378" target="_blank" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/yusuf-khan-8a1bb4378" target="_blank" aria-label="LinkedIn" data-aos="zoom-in" data-aos-delay="500">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="mailto:yusuft287@gmail.com" aria-label="Email">
+          <a href="mailto:yusuft287@gmail.com" aria-label="Email" data-aos="zoom-in" data-aos-delay="600">
             <i class="fas fa-envelope"></i>
           </a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="image-wrapper">
-          <div class="profile-placeholder">
-            <i class="fas fa-user"></i>
-          </div>
         </div>
       </div>
     </div>
@@ -87,12 +90,12 @@
   <!-- About Section -->
   <section id="about" class="section">
     <div class="section-container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-label">// About Me</span>
         <h2 class="section-title">A Developer Who Gets Things Done</h2>
       </div>
       <div class="about-content">
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-right">
           <p>
             I'm a <strong>Web and Odoo Developer</strong> based in Chennai, India. Currently pursuing my MCA while building real-world solutions.
           </p>
@@ -105,43 +108,43 @@
             or figuring out how to make systems more efficient.
           </p>
           <div class="about-stats">
-            <div class="stat-item">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
               <div class="stat-number">3+</div>
               <div class="stat-label">Projects Delivered</div>
             </div>
-            <div class="stat-item">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
               <div class="stat-number">10+</div>
               <div class="stat-label">Technologies</div>
             </div>
-            <div class="stat-item">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
               <div class="stat-number">MCA</div>
               <div class="stat-label">In Progress</div>
             </div>
           </div>
         </div>
-        <div class="about-features">
-          <div class="feature-card">
+        <div class="about-features" data-aos="fade-left">
+          <div class="feature-card" data-aos="flip-left" data-aos-delay="100">
             <div class="feature-icon">
               <i class="fas fa-code"></i>
             </div>
             <h3>Backend-First</h3>
             <p>Strong Python foundation with clean, maintainable code</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
             <div class="feature-icon">
               <i class="fas fa-database"></i>
             </div>
             <h3>Database Expertise</h3>
             <p>PostgreSQL, MySQL, and ORM optimization</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
             <div class="feature-icon">
               <i class="fas fa-cogs"></i>
             </div>
             <h3>Workflow Automation</h3>
             <p>Streamlining business processes in Odoo ERP</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card" data-aos="flip-left" data-aos-delay="400">
             <div class="feature-icon">
               <i class="fas fa-lightbulb"></i>
             </div>
@@ -156,7 +159,7 @@
   <!-- Skills Section -->
   <section id="skills" class="section section-alt">
     <div class="section-container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-label">// Skills</span>
         <h2 class="section-title">Technologies I Work With</h2>
         <p class="section-description">
@@ -164,7 +167,7 @@
         </p>
       </div>
       <div class="skills-grid">
-        <div class="skill-category">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
           <div class="skill-header">
             <i class="fas fa-paint-brush"></i>
             <h3>Frontend</h3>
@@ -178,7 +181,7 @@
             <span class="skill-tag">Responsive Design</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
           <div class="skill-header">
             <i class="fas fa-server"></i>
             <h3>Backend</h3>
@@ -192,7 +195,7 @@
             <span class="skill-tag">API Integration</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
           <div class="skill-header">
             <i class="fas fa-box"></i>
             <h3>Odoo ERP</h3>
@@ -206,7 +209,7 @@
             <span class="skill-tag">QWeb Reports</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
           <div class="skill-header">
             <i class="fas fa-database"></i>
             <h3>Database</h3>
@@ -217,7 +220,7 @@
             <span class="skill-tag">SQL</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
           <div class="skill-header">
             <i class="fas fa-tools"></i>
             <h3>Tools & Systems</h3>
@@ -231,7 +234,7 @@
             <span class="skill-tag">Docker</span>
           </div>
         </div>
-        <div class="skill-category">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="600">
           <div class="skill-header">
             <i class="fas fa-user-friends"></i>
             <h3>Soft Skills</h3>
@@ -250,7 +253,7 @@
   <!-- Projects Section -->
   <section id="projects" class="section">
     <div class="section-container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-label">// Projects</span>
         <h2 class="section-title">What I've Built</h2>
         <p class="section-description">
@@ -258,7 +261,7 @@
         </p>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-image">
             <div class="project-image-placeholder">
               <i class="fas fa-graduation-cap"></i>
@@ -299,7 +302,7 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
           <div class="project-image">
             <div class="project-image-placeholder">
               <i class="fas fa-hospital"></i>
@@ -340,7 +343,7 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
           <div class="project-image">
             <div class="project-image-placeholder">
               <i class="fas fa-laptop-code"></i>
@@ -387,12 +390,12 @@
   <!-- Experience Section -->
   <section id="experience" class="section section-alt">
     <div class="section-container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-label">// Experience</span>
         <h2 class="section-title">My Journey</h2>
       </div>
       <div class="experience-content">
-        <div class="experience-card">
+        <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
           <div class="experience-header">
             <div class="experience-icon">
               <i class="fas fa-briefcase"></i>
@@ -439,12 +442,12 @@
   <!-- Education Section -->
   <section id="education" class="section">
     <div class="section-container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-label">// Education & Certifications</span>
         <h2 class="section-title">My Journey</h2>
       </div>
       <div class="education-content">
-        <div class="education-group">
+        <div class="education-group" data-aos="fade-right" data-aos-delay="100">
           <div class="education-header">
             <i class="fas fa-graduation-cap"></i>
             <h3>Education</h3>
@@ -467,7 +470,7 @@
             </div>
           </div>
         </div>
-        <div class="education-group">
+        <div class="education-group" data-aos="fade-left" data-aos-delay="200">
           <div class="education-header">
             <i class="fas fa-certificate"></i>
             <h3>Certifications</h3>
@@ -503,7 +506,7 @@
   <!-- Contact Section -->
   <section id="contact" class="section section-alt">
     <div class="section-container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-label">// Contact</span>
         <h2 class="section-title">Let's Work Together</h2>
         <p class="section-description">
@@ -511,7 +514,7 @@
         </p>
       </div>
       <div class="contact-content">
-        <div class="contact-info">
+        <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
           <h3>Get in Touch</h3>
           <div class="contact-item">
             <a href="mailto:yusuft287@gmail.com" class="contact-link">
@@ -541,7 +544,7 @@
             </div>
           </div>
         </div>
-        <div class="contact-social">
+        <div class="contact-social" data-aos="fade-left" data-aos-delay="200">
           <h3>Connect Online</h3>
           <div class="social-links">
             <a href="https://github.com/Yusufi8" target="_blank" class="social-link">
@@ -588,6 +591,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
