@@ -207,6 +207,20 @@ projectCards.forEach(card => {
   }
 });
 
+// Initialize AOS (Animate On Scroll)
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100,
+    disable: function() {
+      // Disable on mobile devices (width < 768px)
+      return window.innerWidth < 768;
+    }
+  });
+}
+
 // Console message
 console.log('%c👋 Hello! Welcome to my portfolio.', 'color: #3b82f6; font-size: 16px; font-weight: bold;');
 console.log('%cBuilt with ❤️ by Yusuf Khan', 'color: #94a3b8; font-size: 12px;');
