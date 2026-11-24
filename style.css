@@ -527,4 +527,6 @@ h1, h2, h3, h4 {
 }
 
 .contact-phone { margin-top: 10px; }
+.contact-roles { justify-content: center; margin: 14px auto 4px; max-width: 640px; }
+.contact .section-sub strong { color: var(--ink); font-weight: 600; }
 .case-actions { margin-top: 2px; }
