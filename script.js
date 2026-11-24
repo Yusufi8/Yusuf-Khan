@@ -1,7 +1,6 @@
 document.documentElement.classList.add('js');
 
 const root = document.documentElement;
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Theme toggle: follows the system until the visitor picks one
 const themeBtn = document.getElementById('theme-toggle');
@@ -68,37 +67,5 @@ const revealObserver = new IntersectionObserver((entries, obs) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
-
-// Step the requisition flow through its stages
-const steps = [...document.querySelectorAll('#flow li')];
-let stage = reduceMotion ? steps.length - 1 : 0;
-
-const paintFlow = () => {
-  steps.forEach((li, i) => {
-    li.classList.toggle('done', i < stage);
-    li.classList.toggle('current', i === stage);
-  });
-};
-paintFlow();
-
-if (!reduceMotion && steps.length) {
-  setInterval(() => {
-    stage = (stage + 1) % (steps.length + 1);
-    paintFlow();
-  }, 1400);
-}
-
-// Copy email
-const copyBtn = document.getElementById('copy-email');
-copyBtn?.addEventListener('click', async () => {
-  const label = copyBtn.querySelector('span');
-  try {
-    await navigator.clipboard.writeText(copyBtn.dataset.email);
-    label.textContent = 'Copied';
-  } catch (e) {
-    label.textContent = copyBtn.dataset.email;
-  }
-  setTimeout(() => { label.textContent = 'Copy email'; }, 2000);
-});
 
 document.getElementById('year').textContent = new Date().getFullYear();

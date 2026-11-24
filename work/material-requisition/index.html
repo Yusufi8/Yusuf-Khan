@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Material &amp; Purchase Requisition · Case study · Yusuf Khan</title>
-  <meta name="description" content="Case study: an Odoo 16 material and purchase requisition workflow with email approvals, stock checks, material issue and PR-to-RFQ hand-off, live in production at T&amp;I Global.">
+  <meta name="description" content="Case study: an Odoo 16 material and purchase requisition suite for T&amp;I Global: approvals with email links, stock checks, material issue, purchase requisitions, RFQs, PO approval by amount and role-based dashboards.">
   <meta name="author" content="Yusuf Khan">
   <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0c1220" media="(prefers-color-scheme: dark)">
@@ -12,7 +12,7 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="Material &amp;amp; Purchase Requisition · Yusuf Khan">
-  <meta property="og:description" content="Case study: an Odoo 16 material and purchase requisition workflow with email approvals, stock checks, material issue and PR-to-RFQ hand-off, live in production at T&amp;I Global.">
+  <meta property="og:description" content="Case study: an Odoo 16 material and purchase requisition suite for T&amp;I Global: approvals with email links, stock checks, material issue, purchase requisitions, RFQs, PO approval by amount and role-based dashboards.">
   <meta property="og:url" content="https://iyusufkhan.netlify.app/work/material-requisition/">
   <meta property="og:image" content="https://iyusufkhan.netlify.app/images/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -43,7 +43,9 @@
     <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></g></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6.6 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.1 6.1l1.3-2 4 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.6 5.5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></symbol>
   </svg>
 
   <header class="nav" id="top">
@@ -58,7 +60,7 @@
           <li><a href="/#experience">Experience</a></li>
           <li><a href="/#skills">Skills</a></li>
           <li><a href="/#about">About</a></li>
-          <li><a href="/resume/Yusuf-Khan-Odoo-Developer-CV-International.pdf" download>CV</a></li>
+          <li><a href="/resume/Yusuf-Khan-CV.pdf" download>CV</a></li>
           <li><a href="/#contact" class="nav-cta">Contact</a></li>
         </ul>
       </nav>
@@ -78,17 +80,14 @@
     <section class="cs-hero">
       <div class="container">
         <a class="crumb" href="/#work">← All work</a>
-        <div class="case-top">
-          <span class="pill pill-live">Live in production</span>
-          <span class="case-where">T&amp;I Projects (T&amp;I Global) · Odoo 16 Enterprise</span>
-        </div>
+        <p class="case-where">T&amp;I Projects (T&amp;I Global) · Odoo 16 Enterprise</p>
         <h1>Material &amp; Purchase Requisition</h1>
-        <p class="cs-lede">A custom Odoo 16 workflow that takes a material request from creation through approval, stock check and issue from stores, and hands items to be procured over to purchasing as a requisition and then an RFQ.</p>
+        <p class="cs-lede">A set of custom Odoo 16 modules that takes a material request from creation through approval, stock check and issue from stores, and carries anything short through purchase requisition, RFQ, PO approval and receipt, with dashboards that show each team what is late.</p>
         <dl class="cs-meta">
           <div><dt>Role</dt><dd>Developer, end to end</dd></div>
           <div><dt>Company</dt><dd>T&amp;I Global</dd></div>
           <div><dt>Platform</dt><dd>Odoo 16 Enterprise</dd></div>
-          <div><dt>Status</dt><dd>Live in production</dd></div>
+          <div><dt>Scope</dt><dd>5 modules + dashboards</dd></div>
         </dl>
       </div>
     </section>
@@ -102,81 +101,85 @@
           <li><a href="#contribution">My contribution</a></li>
           <li><a href="#workflow">Functional workflow</a></li>
           <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#screens">Screens</a></li>
           <li><a href="#stack">Technologies</a></li>
           <li><a href="#testing">Testing &amp; validation</a></li>
-          <li><a href="#status">Status</a></li>
         </ol>
       </nav>
 
       <div class="cs-body">
           <section class="cs-section" id="problem">
             <h2>Business problem</h2>
-            <p>Material requests were handled manually rather than through one structured flow in Odoo. That made it harder to see who had approved a request, to check stock before issuing material, and to pass items that had to be bought on to purchasing consistently.</p>
+            <p>Material requests were handled manually rather than through one structured flow in Odoo. That made it harder to see who had approved a request, to check stock before issuing material, to pass shortages on to purchasing consistently, and to see where any document was waiting.</p>
           </section>
 
           <section class="cs-section" id="solution">
             <h2>Solution</h2>
             <ul class="cs-list">
-              <li><strong>Material request</strong> creation as a structured document in Odoo.</li>
-              <li><strong>Approval workflow</strong> with defined stages, including <strong>manager approval by email</strong>.</li>
-              <li><strong>Stock availability check</strong> before material is issued.</li>
-              <li><strong>Material issue</strong> from stores against the approved request.</li>
-              <li><strong>Purchase requisition</strong> generation for items to be procured, then the <strong>PR-to-RFQ</strong> hand-off to purchasing.</li>
-              <li><strong>Product variant</strong> support through the TI Variant Configurator, so requests name the exact variant.</li>
+              <li><strong>Material requests</strong> as structured documents, with requester, department and business references.</li>
+              <li><strong>Approval workflow</strong>: supervisor approval, then inventory review, with <strong>personal, login-protected approval links</strong> in the e-mails.</li>
+              <li><strong>Stock check and material issue</strong> through real stock transfers, including partial issue and returns.</li>
+              <li><strong>Purchase requisitions</strong> for shortages, approved by a director, then vendor quotes, <strong>RFQ</strong> and <strong>PO approval by order amount</strong>.</li>
+              <li><strong>Receipt and issue</strong> back to the requester once goods arrive.</li>
+              <li><strong>Dashboards</strong>: late work by team, requests that are short, approvals waiting, vendor on-time rate, and a <strong>My Work</strong> list for each role.</li>
+              <li><strong>Product variants</strong> through the TI Variant Configurator, so requests name the exact variant.</li>
             </ul>
           </section>
 
           <section class="cs-section" id="contribution">
             <h2>My contribution</h2>
             <ul class="cs-list">
-              <li>Developed the module: models and workflow states, XML views, approval logic and mail templates.</li>
-              <li>Implemented access rights and record rules so each role sees and acts on the right requests.</li>
-              <li>Connected the flow to Inventory for stock checks and material issue, and to Purchase for requisitions and RFQs.</li>
-              <li>Integrated variant-level product selection from the TI Variant Configurator.</li>
-              <li>Tested the workflow and delivered it; it now runs in production.</li>
+              <li>Developed the modules: a shared workflow core, material requisition, inventory control, purchase requisition, procurement and dashboards.</li>
+              <li>Built server-side role checks, controlled state transitions and an audit log of who did what.</li>
+              <li>Wrote the e-mail templates and the queued mail sending, with failures recorded.</li>
+              <li>Connected the flow to Inventory, Purchase and product variants.</li>
+              <li>Tested the full chain with each user role and delivered the upgrades with backups taken first.</li>
             </ul>
           </section>
 
           <section class="cs-section" id="workflow">
             <h2>Functional workflow</h2>
             <ol class="steps">
-              <li><strong>Request</strong>A user raises a material request.</li>
-              <li><strong>Approve</strong>The request moves through approval stages; managers can approve from email.</li>
-              <li><strong>Check stock</strong>Availability is checked against inventory.</li>
-              <li><strong>Issue</strong>Stores issue the available material.</li>
-              <li><strong>Requisition</strong>A purchase requisition is raised for items to be procured.</li>
-              <li><strong>RFQ</strong>Purchasing turns the requisition into a request for quotation.</li>
+              <li><strong>Request</strong>A production user raises and submits a material request.</li>
+              <li><strong>Supervisor</strong>The supervisor approves, from Odoo or the e-mail link.</li>
+              <li><strong>Stores</strong>Inventory reviews availability and issues what is in stock.</li>
+              <li><strong>Shortage</strong>Items short become a purchase requisition for the director to approve.</li>
+              <li><strong>Purchase</strong>Vendor quotes, RFQ, and PO approval by order amount.</li>
+              <li><strong>Receive &amp; issue</strong>Goods are received and issued to the requester.</li>
             </ol>
           </section>
 
           <section class="cs-section" id="architecture">
             <h2>Architecture</h2>
             <figure class="arch" aria-label="Architecture diagram">
-              <div class="arch-layer"><p class="arch-name">Users</p><ul class="arch-nodes"><li>Requester</li><li>Approving manager</li><li>Stores</li><li>Purchase</li></ul></div>
-              <div class="arch-layer is-core"><p class="arch-name">Custom module</p><ul class="arch-nodes"><li>Requisition models &amp; states</li><li>Approval logic</li><li>Mail templates</li><li>Security groups &amp; record rules</li></ul></div>
+              <div class="arch-layer"><p class="arch-name">Users</p><ul class="arch-nodes"><li>Production</li><li>Supervisors</li><li>Stores</li><li>Directors</li><li>Purchase</li></ul></div>
+              <div class="arch-layer is-core"><p class="arch-name">Custom modules</p><ul class="arch-nodes"><li>Workflow core</li><li>Material requisition</li><li>Inventory control</li><li>Purchase requisition</li><li>Procurement</li><li>Dashboards</li></ul></div>
               <div class="arch-layer"><p class="arch-name">Odoo 16 apps</p><ul class="arch-nodes"><li>Inventory</li><li>Purchase</li><li>Product variants</li><li>Discuss / Mail</li></ul></div>
-              <div class="arch-layer"><p class="arch-name">Data</p><ul class="arch-nodes"><li>PostgreSQL</li></ul></div>
-              <figcaption class="arch-note">A custom Odoo addon built on top of standard Inventory, Purchase and Mail.</figcaption>
+              <div class="arch-layer"><p class="arch-name">Data</p><ul class="arch-nodes"><li>PostgreSQL</li><li>Scheduled mail queue</li></ul></div>
+              <figcaption class="arch-note">Custom addons on top of standard Inventory, Purchase and Mail; stock always moves through real transfers.</figcaption>
             </figure>
+          </section>
+
+          <section class="cs-section" id="screens">
+            <h2>Screens</h2>
+            <div class="shots">
+              <figure class="shot"><img src="/images/work/requisition-dashboard.webp" width="800" height="703" alt="Odoo dashboard showing late documents, requests short of stock, approvals waiting and vendor on-time rate, with late work by team" loading="lazy" decoding="async"><figcaption>Dashboard: late documents, shortages, approvals waiting, vendor on-time rate and late work by team. Test data.</figcaption></figure>
+              <figure class="shot"><img src="/images/work/requisition-my-work.webp" width="800" height="527" alt="My Work page for a purchase manager listing late purchase documents to open" loading="lazy" decoding="async"><figcaption>My Work for a purchase manager: what to do now, late items first. Test data.</figcaption></figure>
+            </div>
           </section>
 
           <section class="cs-section" id="stack">
             <h2>Technologies</h2>
-            <ul class="tags"><li>Python</li><li>Odoo ORM</li><li>XML views</li><li>Mail templates</li><li>Security rules</li><li>PostgreSQL</li><li>Odoo 16 Enterprise</li></ul>
+            <ul class="tags"><li>Python</li><li>Odoo ORM</li><li>XML views</li><li>Mail templates</li><li>Security rules</li><li>Scheduled actions</li><li>PostgreSQL</li><li>Odoo 16 Enterprise</li></ul>
           </section>
 
           <section class="cs-section" id="testing">
             <h2>Testing &amp; validation</h2>
             <ul class="cs-list">
-              <li>Functional testing of each stage: request, approval (including email approval), stock check, issue, requisition and RFQ.</li>
-              <li>Released to production, where it is in use.</li>
+              <li>102 automated tests pass on a fresh install.</li>
+              <li>The whole chain, from request to issue and from shortage to PO and receipt, with its e-mails, was run step by step with each user role on a copy of the live database.</li>
+              <li>Every upgrade is deployed with a database backup taken first.</li>
             </ul>
-            <p class="callout"><strong>Why there are no screenshots:</strong> this is a company system that holds live business data, so screenshots and source code aren't published. The workflow and architecture above describe the solution without exposing either.</p>
-          </section>
-
-          <section class="cs-section" id="status">
-            <h2>Status</h2>
-            <p>Developed, tested, delivered and <strong>live in production</strong>.</p>
           </section>
 
           <nav class="cs-next" aria-label="More case studies">
