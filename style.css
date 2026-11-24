@@ -537,5 +537,5 @@ h1, h2, h3, h4 {
   .js .reveal { opacity: 1; transform: none; }
 }
 
-.contact-cv { margin-top: 10px; }
+.contact-cv, .contact-phone { margin-top: 10px; }
 .case-actions { margin-top: 2px; }
