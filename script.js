@@ -37,7 +37,7 @@ const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Highlight the nav link for the section in view
+// Highlight the nav link for the section in view (home page only)
 const links = [...navLinks.querySelectorAll('a[href^="#"]')];
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -46,6 +46,18 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
 document.querySelectorAll('main section[id]').forEach((s) => sectionObserver.observe(s));
+
+// Case-study pages: highlight the table-of-contents entry for the section in view
+const tocLinks = [...document.querySelectorAll('.cs-toc a')];
+if (tocLinks.length) {
+  const tocObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      tocLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.cs-section[id]').forEach((s) => tocObserver.observe(s));
+}
 
 // Fade cards in as they scroll into view
 const revealObserver = new IntersectionObserver((entries, obs) => {
@@ -78,7 +90,7 @@ if (!reduceMotion && steps.length) {
 
 // Copy email
 const copyBtn = document.getElementById('copy-email');
-copyBtn.addEventListener('click', async () => {
+copyBtn?.addEventListener('click', async () => {
   const label = copyBtn.querySelector('span');
   try {
     await navigator.clipboard.writeText(copyBtn.dataset.email);
