@@ -59,7 +59,6 @@
           <li><a href="/#work" class="active" aria-current="true">Work</a></li>
           <li><a href="/#experience">Experience</a></li>
           <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#about">About</a></li>
           <li><a href="/resume/Yusuf-Khan-CV.pdf" download>CV</a></li>
           <li><a href="/#contact" class="nav-cta">Contact</a></li>
         </ul>
@@ -79,7 +78,7 @@
   <main id="main">
     <section class="cs-hero">
       <div class="container">
-        <a class="crumb" href="/#work">← All work</a>
+        <a class="crumb" href="/#work">← Back to work</a>
         <p class="case-where">T&amp;I Projects · Odoo 16 QWeb</p>
         <h1>Export Packing Customization</h1>
         <p class="cs-lede">Export packing list and packing slip PDF reports rebuilt in QWeb to match the business's own export document template, with configuration options for the people who print them.</p>
@@ -91,29 +90,15 @@
       </div>
     </section>
 
-    <div class="container cs-layout">
-      <nav class="cs-toc" aria-label="On this page">
-        <p>On this page</p>
-        <ol>
-          <li><a href="#problem">Business problem</a></li>
-          <li><a href="#solution">Solution</a></li>
-          <li><a href="#contribution">My contribution</a></li>
-          <li><a href="#workflow">Functional workflow</a></li>
-          <li><a href="#architecture">Architecture</a></li>
-          <li><a href="#screens">Screens</a></li>
-          <li><a href="#stack">Technologies</a></li>
-          <li><a href="#testing">Testing &amp; validation</a></li>
-        </ol>
-      </nav>
-
+    <div class="container cs-layout cs-simple">
       <div class="cs-body">
           <section class="cs-section" id="problem">
-            <h2>Business problem</h2>
+            <h2>The problem</h2>
             <p>Export shipments need packing documents in the business's own format. The standard Odoo layouts didn't match it, so documents needed manual preparation outside the ERP.</p>
           </section>
 
           <section class="cs-section" id="solution">
-            <h2>Solution</h2>
+            <h2>What I built</h2>
             <ul class="cs-list">
               <li><strong>Export packing list</strong> and <strong>packing slip</strong> QWeb PDF reports.</li>
               <li>Layouts matched to the <strong>business document template</strong>, with package-level details and product lines.</li>
@@ -123,32 +108,13 @@
             </ul>
           </section>
 
-          <section class="cs-section" id="contribution">
-            <h2>My contribution</h2>
-            <ul class="cs-list">
-              <li>Built the QWeb templates and the data they need from Odoo.</li>
-              <li>Added the configuration options for fields, logo, port and package type.</li>
-              <li>Refined the print layout against the business template.</li>
-            </ul>
-          </section>
-
           <section class="cs-section" id="workflow">
-            <h2>Functional workflow</h2>
+            <h2>How it works</h2>
             <ol class="steps">
               <li><strong>Prepare</strong>Packing data is recorded on the shipment in Odoo.</li>
               <li><strong>Configure</strong>The user selects port, package type, fields and logo display.</li>
               <li><strong>Print</strong>Odoo renders the packing list or packing slip as a PDF.</li>
             </ol>
-          </section>
-
-          <section class="cs-section" id="architecture">
-            <h2>Architecture</h2>
-            <figure class="arch" aria-label="Architecture diagram">
-              <div class="arch-layer"><p class="arch-name">Source data</p><ul class="arch-nodes"><li>Shipments &amp; packages</li><li>Product lines</li><li>Company details</li></ul></div>
-              <div class="arch-layer is-core"><p class="arch-name">Customization</p><ul class="arch-nodes"><li>Report configuration</li><li>QWeb templates</li></ul></div>
-              <div class="arch-layer"><p class="arch-name">Output</p><ul class="arch-nodes"><li>Packing list PDF</li><li>Packing slip PDF</li></ul></div>
-              <figcaption class="arch-note">Standard Odoo report rendering with custom QWeb templates.</figcaption>
-            </figure>
           </section>
 
           <section class="cs-section" id="screens">
@@ -159,16 +125,8 @@
           </section>
 
           <section class="cs-section" id="stack">
-            <h2>Technologies</h2>
+            <h2>Built with</h2>
             <ul class="tags"><li>QWeb</li><li>Python</li><li>Odoo ORM</li><li>XML</li><li>PDF reports</li><li>Odoo 16</li></ul>
-          </section>
-
-          <section class="cs-section" id="testing">
-            <h2>Testing &amp; validation</h2>
-            <ul class="cs-list">
-              <li>Compared printed output with the business template and refined the layout.</li>
-              <li>Checked each configuration option changes the printed document as expected.</li>
-            </ul>
           </section>
 
           <nav class="cs-next" aria-label="More case studies">

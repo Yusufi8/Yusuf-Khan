@@ -59,7 +59,6 @@
           <li><a href="/#work" class="active" aria-current="true">Work</a></li>
           <li><a href="/#experience">Experience</a></li>
           <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#about">About</a></li>
           <li><a href="/resume/Yusuf-Khan-CV.pdf" download>CV</a></li>
           <li><a href="/#contact" class="nav-cta">Contact</a></li>
         </ul>
@@ -79,7 +78,7 @@
   <main id="main">
     <section class="cs-hero">
       <div class="container">
-        <a class="crumb" href="/#work">← All work</a>
+        <a class="crumb" href="/#work">← Back to work</a>
         <p class="case-where">T&amp;I Projects (T&amp;I Global) · Odoo 16 Enterprise</p>
         <h1>Material &amp; Purchase Requisition</h1>
         <p class="cs-lede">A set of custom Odoo 16 modules that takes a material request from creation through approval, stock check and issue from stores, and carries anything short through purchase requisition, RFQ, PO approval and receipt, with dashboards that show each team what is late.</p>
@@ -92,29 +91,15 @@
       </div>
     </section>
 
-    <div class="container cs-layout">
-      <nav class="cs-toc" aria-label="On this page">
-        <p>On this page</p>
-        <ol>
-          <li><a href="#problem">Business problem</a></li>
-          <li><a href="#solution">Solution</a></li>
-          <li><a href="#contribution">My contribution</a></li>
-          <li><a href="#workflow">Functional workflow</a></li>
-          <li><a href="#architecture">Architecture</a></li>
-          <li><a href="#screens">Screens</a></li>
-          <li><a href="#stack">Technologies</a></li>
-          <li><a href="#testing">Testing &amp; validation</a></li>
-        </ol>
-      </nav>
-
+    <div class="container cs-layout cs-simple">
       <div class="cs-body">
           <section class="cs-section" id="problem">
-            <h2>Business problem</h2>
+            <h2>The problem</h2>
             <p>Material requests were handled manually rather than through one structured flow in Odoo. That made it harder to see who had approved a request, to check stock before issuing material, to pass shortages on to purchasing consistently, and to see where any document was waiting.</p>
           </section>
 
           <section class="cs-section" id="solution">
-            <h2>Solution</h2>
+            <h2>What I built</h2>
             <ul class="cs-list">
               <li><strong>Material requests</strong> as structured documents, with requester, department and business references.</li>
               <li><strong>Approval workflow</strong>: supervisor approval, then inventory review, with <strong>personal, login-protected approval links</strong> in the e-mails.</li>
@@ -126,19 +111,8 @@
             </ul>
           </section>
 
-          <section class="cs-section" id="contribution">
-            <h2>My contribution</h2>
-            <ul class="cs-list">
-              <li>Developed the modules: a shared workflow core, material requisition, inventory control, purchase requisition, procurement and dashboards.</li>
-              <li>Built server-side role checks, controlled state transitions and an audit log of who did what.</li>
-              <li>Wrote the e-mail templates and the queued mail sending, with failures recorded.</li>
-              <li>Connected the flow to Inventory, Purchase and product variants.</li>
-              <li>Tested the full chain with each user role and delivered the upgrades with backups taken first.</li>
-            </ul>
-          </section>
-
           <section class="cs-section" id="workflow">
-            <h2>Functional workflow</h2>
+            <h2>How it works</h2>
             <ol class="steps">
               <li><strong>Request</strong>A production user raises and submits a material request.</li>
               <li><strong>Supervisor</strong>The supervisor approves, from Odoo or the e-mail link.</li>
@@ -147,17 +121,6 @@
               <li><strong>Purchase</strong>Vendor quotes, RFQ, and PO approval by order amount.</li>
               <li><strong>Receive &amp; issue</strong>Goods are received and issued to the requester.</li>
             </ol>
-          </section>
-
-          <section class="cs-section" id="architecture">
-            <h2>Architecture</h2>
-            <figure class="arch" aria-label="Architecture diagram">
-              <div class="arch-layer"><p class="arch-name">Users</p><ul class="arch-nodes"><li>Production</li><li>Supervisors</li><li>Stores</li><li>Directors</li><li>Purchase</li></ul></div>
-              <div class="arch-layer is-core"><p class="arch-name">Custom modules</p><ul class="arch-nodes"><li>Workflow core</li><li>Material requisition</li><li>Inventory control</li><li>Purchase requisition</li><li>Procurement</li><li>Dashboards</li></ul></div>
-              <div class="arch-layer"><p class="arch-name">Odoo 16 apps</p><ul class="arch-nodes"><li>Inventory</li><li>Purchase</li><li>Product variants</li><li>Discuss / Mail</li></ul></div>
-              <div class="arch-layer"><p class="arch-name">Data</p><ul class="arch-nodes"><li>PostgreSQL</li><li>Scheduled mail queue</li></ul></div>
-              <figcaption class="arch-note">Custom addons on top of standard Inventory, Purchase and Mail; stock always moves through real transfers.</figcaption>
-            </figure>
           </section>
 
           <section class="cs-section" id="screens">
@@ -169,17 +132,8 @@
           </section>
 
           <section class="cs-section" id="stack">
-            <h2>Technologies</h2>
+            <h2>Built with</h2>
             <ul class="tags"><li>Python</li><li>Odoo ORM</li><li>XML views</li><li>Mail templates</li><li>Security rules</li><li>Scheduled actions</li><li>PostgreSQL</li><li>Odoo 16 Enterprise</li></ul>
-          </section>
-
-          <section class="cs-section" id="testing">
-            <h2>Testing &amp; validation</h2>
-            <ul class="cs-list">
-              <li>102 automated tests pass on a fresh install.</li>
-              <li>The whole chain, from request to issue and from shortage to PO and receipt, with its e-mails, was run step by step with each user role on a copy of the live database.</li>
-              <li>Every upgrade is deployed with a database backup taken first.</li>
-            </ul>
           </section>
 
           <nav class="cs-next" aria-label="More case studies">

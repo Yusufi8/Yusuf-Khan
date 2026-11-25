@@ -59,7 +59,6 @@
           <li><a href="/#work" class="active" aria-current="true">Work</a></li>
           <li><a href="/#experience">Experience</a></li>
           <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#about">About</a></li>
           <li><a href="/resume/Yusuf-Khan-CV.pdf" download>CV</a></li>
           <li><a href="/#contact" class="nav-cta">Contact</a></li>
         </ul>
@@ -79,7 +78,7 @@
   <main id="main">
     <section class="cs-hero">
       <div class="container">
-        <a class="crumb" href="/#work">← All work</a>
+        <a class="crumb" href="/#work">← Back to work</a>
         <p class="case-where">Personal project · not company work</p>
         <h1>JobPilot</h1>
         <p class="cs-lede">A job-search automation product I designed and built on my own. It runs locally, so the user keeps control of their data, and nothing is ever submitted on their behalf.</p>
@@ -92,29 +91,15 @@
       </div>
     </section>
 
-    <div class="container cs-layout">
-      <nav class="cs-toc" aria-label="On this page">
-        <p>On this page</p>
-        <ol>
-          <li><a href="#problem">Problem</a></li>
-          <li><a href="#solution">Solution</a></li>
-          <li><a href="#contribution">My contribution</a></li>
-          <li><a href="#workflow">Functional workflow</a></li>
-          <li><a href="#architecture">Architecture</a></li>
-          <li><a href="#scoring">How the score works</a></li>
-          <li><a href="#stack">Technologies</a></li>
-          <li><a href="#testing">Testing &amp; validation</a></li>
-        </ol>
-      </nav>
-
+    <div class="container cs-layout cs-simple">
       <div class="cs-body">
           <section class="cs-section" id="problem">
-            <h2>Problem</h2>
+            <h2>The problem</h2>
             <p>An active job search means checking many sources, judging fit again and again, tailoring a CV for each role and remembering where every application stands. I wanted a tool that does this systematically, explains its judgments and keeps personal data on the user's own machine.</p>
           </section>
 
           <section class="cs-section" id="solution">
-            <h2>Solution</h2>
+            <h2>What I built</h2>
             <ul class="cs-list">
               <li><strong>Job discovery</strong> from permitted sources (public job boards and company ATS feeds), Gmail job alerts and a browser extension.</li>
               <li><strong>Relevance score out of 100</strong> with a reason for every point, plus duplicate detection and checks that job links are still live.</li>
@@ -125,13 +110,8 @@
             </ul>
           </section>
 
-          <section class="cs-section" id="contribution">
-            <h2>My contribution</h2>
-            <p>Everything: product design, data model, FastAPI backend, server-rendered interface, scoring rules, document generation, Gmail connector, MCP server, browser extension and test suite.</p>
-          </section>
-
           <section class="cs-section" id="workflow">
-            <h2>Functional workflow</h2>
+            <h2>How it works</h2>
             <ol class="steps">
               <li><strong>Profile</strong>The user keeps one master profile of facts.</li>
               <li><strong>Discover</strong>Jobs arrive from sources, alerts or the extension.</li>
@@ -142,34 +122,9 @@
             </ol>
           </section>
 
-          <section class="cs-section" id="architecture">
-            <h2>Architecture</h2>
-            <figure class="arch" aria-label="Architecture diagram">
-              <div class="arch-layer"><p class="arch-name">Inputs</p><ul class="arch-nodes"><li>Job boards &amp; ATS feeds</li><li>Gmail alerts</li><li>Browser extension</li><li>Pasted job descriptions</li></ul></div>
-              <div class="arch-layer is-core"><p class="arch-name">Application</p><ul class="arch-nodes"><li>FastAPI app</li><li>Extraction &amp; scoring</li><li>Dedup &amp; link checks</li><li>Resume engine</li><li>Tracker</li></ul></div>
-              <div class="arch-layer"><p class="arch-name">Integrations</p><ul class="arch-nodes"><li>MCP server</li><li>Local AI</li><li>Notifications</li></ul></div>
-              <div class="arch-layer"><p class="arch-name">Storage &amp; output</p><ul class="arch-nodes"><li>SQLite via SQLAlchemy</li><li>DOCX / PDF documents</li><li>CSV / Excel exports</li></ul></div>
-              <figcaption class="arch-note">Runs on the user's own computer; other devices can sign in over the local network.</figcaption>
-            </figure>
-          </section>
-
-          <section class="cs-section" id="scoring">
-            <h2>How the score works</h2>
-            <table class="score-table"><thead><tr><th scope="col">Criterion</th><th scope="col">Points</th></tr></thead><tbody><tr><td>Technical skill match</td><td>30</td></tr><tr><td>Domain experience</td><td>25</td></tr><tr><td>Role compatibility</td><td>15</td></tr><tr><td>Salary fit</td><td>10</td></tr><tr><td>Location &amp; work arrangement</td><td>10</td></tr><tr><td>Experience eligibility</td><td>5</td></tr><tr><td>Sponsorship &amp; relocation</td><td>5</td></tr></tbody></table>
-            <p>Facts are read from the job description with transparent rules, and every extracted fact can be corrected by the user.</p>
-          </section>
-
           <section class="cs-section" id="stack">
-            <h2>Technologies</h2>
+            <h2>Built with</h2>
             <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Jinja</li><li>Gmail API</li><li>MCP</li><li>Local AI</li><li>python-docx</li><li>WeasyPrint</li><li>Browser extension</li><li>pytest</li></ul>
-          </section>
-
-          <section class="cs-section" id="testing">
-            <h2>Testing &amp; validation</h2>
-            <ul class="cs-list">
-              <li>An automated pytest suite of more than 260 tests covering scoring, extraction, deduplication, sources, Gmail parsing, CV and letter generation, the apply flow, authentication and the MCP server.</li>
-              <li>Every generated CV goes through a review and approval step before it is used.</li>
-            </ul>
           </section>
 
           <nav class="cs-next" aria-label="More case studies">

@@ -59,7 +59,6 @@
           <li><a href="/#work" class="active" aria-current="true">Work</a></li>
           <li><a href="/#experience">Experience</a></li>
           <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#about">About</a></li>
           <li><a href="/resume/Yusuf-Khan-CV.pdf" download>CV</a></li>
           <li><a href="/#contact" class="nav-cta">Contact</a></li>
         </ul>
@@ -79,7 +78,7 @@
   <main id="main">
     <section class="cs-hero">
       <div class="container">
-        <a class="crumb" href="/#work">← All work</a>
+        <a class="crumb" href="/#work">← Back to work</a>
         <p class="case-where">T&amp;I Projects · Odoo 16</p>
         <h1>TI Variant Configurator</h1>
         <p class="cs-lede">An Odoo 16 customization that lets Purchase, Bills of Materials and Material Requisition select the exact product variant, where the standard flows select at product level.</p>
@@ -91,28 +90,15 @@
       </div>
     </section>
 
-    <div class="container cs-layout">
-      <nav class="cs-toc" aria-label="On this page">
-        <p>On this page</p>
-        <ol>
-          <li><a href="#problem">Business problem</a></li>
-          <li><a href="#solution">Solution</a></li>
-          <li><a href="#contribution">My contribution</a></li>
-          <li><a href="#workflow">Functional workflow</a></li>
-          <li><a href="#architecture">Architecture</a></li>
-          <li><a href="#stack">Technologies</a></li>
-          <li><a href="#testing">Testing &amp; validation</a></li>
-        </ol>
-      </nav>
-
+    <div class="container cs-layout cs-simple">
       <div class="cs-body">
           <section class="cs-section" id="problem">
-            <h2>Business problem</h2>
+            <h2>The problem</h2>
             <p>Several standard Odoo flows select products at product (template) level. The business needed purchase orders, bills of materials and material requisitions to name the specific variant, so the right item is bought, built and issued.</p>
           </section>
 
           <section class="cs-section" id="solution">
-            <h2>Solution</h2>
+            <h2>What I built</h2>
             <ul class="cs-list">
               <li>Adapted an existing product configurator for <strong>variant-level selection</strong>.</li>
               <li>Enabled it in <strong>Purchase</strong>, <strong>Bills of Materials</strong> and <strong>Material Requisition</strong>.</li>
@@ -120,17 +106,8 @@
             </ul>
           </section>
 
-          <section class="cs-section" id="contribution">
-            <h2>My contribution</h2>
-            <ul class="cs-list">
-              <li>Adapted the configurator's models and views for the three flows.</li>
-              <li>Integrated it with the Material &amp; Purchase Requisition workflow.</li>
-              <li>Tested the end-to-end flows before handing it over.</li>
-            </ul>
-          </section>
-
           <section class="cs-section" id="workflow">
-            <h2>Functional workflow</h2>
+            <h2>How it works</h2>
             <ol class="steps">
               <li><strong>Open document</strong>A user works on a PO, BoM or material requisition.</li>
               <li><strong>Configure</strong>They pick the product and configure the variant.</li>
@@ -139,26 +116,9 @@
             </ol>
           </section>
 
-          <section class="cs-section" id="architecture">
-            <h2>Architecture</h2>
-            <figure class="arch" aria-label="Architecture diagram">
-              <div class="arch-layer"><p class="arch-name">Documents</p><ul class="arch-nodes"><li>Purchase order lines</li><li>BoM lines</li><li>Material requisition lines</li></ul></div>
-              <div class="arch-layer is-core"><p class="arch-name">Customization</p><ul class="arch-nodes"><li>Variant configurator</li><li>Variant resolution</li></ul></div>
-              <div class="arch-layer"><p class="arch-name">Odoo 16 apps</p><ul class="arch-nodes"><li>Product variants</li><li>Purchase</li><li>Manufacturing</li><li>Inventory</li></ul></div>
-              <figcaption class="arch-note">Extends standard product variants rather than replacing them.</figcaption>
-            </figure>
-          </section>
-
           <section class="cs-section" id="stack">
-            <h2>Technologies</h2>
+            <h2>Built with</h2>
             <ul class="tags"><li>Python</li><li>Odoo ORM</li><li>XML views</li><li>Product variants</li><li>Purchase</li><li>BoM / MRP</li></ul>
-          </section>
-
-          <section class="cs-section" id="testing">
-            <h2>Testing &amp; validation</h2>
-            <ul class="cs-list">
-              <li>End-to-end testing of variant selection in Purchase, BoM and Material Requisition.</li>
-            </ul>
           </section>
 
           <nav class="cs-next" aria-label="More case studies">

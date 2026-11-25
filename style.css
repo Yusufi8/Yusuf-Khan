@@ -530,3 +530,13 @@ h1, h2, h3, h4 {
 .contact-roles { justify-content: center; margin: 14px auto 4px; max-width: 640px; }
 .contact .section-sub strong { color: var(--ink); font-weight: 600; }
 .case-actions { margin-top: 2px; }
+
+/* ---------- Simple layout additions ---------- */
+.case > .case-where { margin: 0; }
+.case .case-link { margin-top: auto; }
+.mini { justify-content: space-between; min-height: 96px; }
+.edu { display: grid; gap: 6px; margin-top: 28px; color: var(--ink-2); font-size: .95rem; }
+.edu strong { color: var(--ink); }
+.contact-plain { margin-top: 18px; font-family: var(--font-mono); font-size: .88rem; color: var(--muted); }
+.hero { padding-bottom: clamp(40px, 6vw, 72px); }
+.cs-simple { grid-template-columns: minmax(0, 760px); justify-content: start; }
