@@ -1,6 +1,6 @@
 # Yusuf Khan · Portfolio
 
-Personal site of Yusuf Khan, Odoo Developer and ERP Techno-Functional Consultant at T&I Projects Private Limited, Coimbatore.
+Personal site of Yusuf Khan, Odoo Techno-Functional Consultant at T&I Projects Private Limited, Coimbatore.
 Live at **https://iyusufkhan.netlify.app**.
 
 A static site with no build step.

@@ -23,7 +23,7 @@ asked: tell me about yourself | who are you | about you | introduce yourself | w
 next: What have you built? | Which Odoo versions do you work with? | Are you available for freelance projects?
 buttons: cv, linkedin
 
-I'm **Yusuf Khan**, an **Odoo developer and techno-functional consultant** from Chennai, India.
+I'm **Yusuf Khan**, an **Odoo Techno-Functional Consultant** from Chennai, India: I design Odoo workflows with the people who use them, and build them myself.
 
 I work at **T&I Projects Private Limited, Coimbatore**, where I build custom Odoo modules for purchase, inventory, manufacturing and sales. I like the whole journey: understanding how a business really works, turning it into an Odoo workflow, testing it properly and training the people who use it.
 
@@ -49,24 +49,24 @@ I work with people on-site, remotely or hybrid, and I'm open to relocating abroa
 asked: current company | current job | employer | T&I | t and i projects | which company | present company
 next: What have you built? | How much experience do you have?
 
-I'm an **Odoo Developer at T&I Projects Private Limited, Coimbatore** (since April 2026). I build and look after the company's Odoo 16 customisations across purchase, inventory, manufacturing, sales and export documents, and I train the teams who use them.
+I'm an **Odoo Techno-Functional Consultant at T&I Projects Private Limited, Coimbatore** (since April 2026). I build and look after the company's Odoo 16 customisations across purchase, inventory, manufacturing, sales and export documents, and I train the teams who use them.
 
 ## How much experience do you have?
 asked: years of experience | experience | how long have you worked with odoo | fresher | how senior are you | work history
-next: Where do you work now? | Tell me about your internship | What have you built?
+next: Where do you work now? | What did you do at Tidal Wave Infotech? | What have you built?
 buttons: cv
 
 I've been working with Odoo since **July 2025**:
-- **Odoo Developer**, T&I Projects Private Limited, Coimbatore (Apr 2026 to now)
-- **Odoo Developer Intern**, Tidal Wave Infotech, Chennai (Jul 2025 to Apr 2026)
+- **Odoo Techno-Functional Consultant**, T&I Projects Private Limited, Coimbatore (Apr 2026 to now)
+- **Odoo Technical Trainee**, Tidal Wave Infotech, Chennai (Jul 2025 to Apr 2026)
 
 In that time I've written about **30 custom Odoo modules** with more than **580 automated tests**. My CV has the details.
 
-## Tell me about your internship
-asked: tidal wave | tidal wave infotech | intern | internship | first job
+## What did you do at Tidal Wave Infotech?
+asked: tidal wave | tidal wave infotech | trainee | technical trainee | traineeship | intern | internship | first job
 next: Tell me about your personal projects | How much experience do you have?
 
-At **Tidal Wave Infotech, Chennai** (Jul 2025 to Apr 2026) I customised Sales, Purchase and Invoicing for clients. I built an **HR and time-off portal** (employee directory, leave requests and approvals in the Odoo portal) and **invoice REST APIs**.
+As an **Odoo Technical Trainee** at **Tidal Wave Infotech, Chennai** (Jul 2025 to Apr 2026), I customised Sales, Purchase and Invoicing for clients. I built an **HR and time-off portal** (employee directory, leave requests and approvals in the Odoo portal) and **invoice REST APIs**.
 
 ## What is your education?
 asked: education | degree | qualification | college | university | mca | bca | studies
@@ -338,10 +338,10 @@ Yes. I build **Odoo website and portal pages** with QWeb templates, controllers,
 
 ## Can you integrate Odoo with other systems?
 asked: integration | api | rest api | xml-rpc | webhook | connect | third party | external system | postman
-next: Tell me about your internship | What are your skills?
+next: What did you do at Tidal Wave Infotech? | What are your skills?
 buttons: project
 
-Yes: **REST APIs**, Odoo's **XML-RPC/JSON-RPC**, webhooks and scheduled jobs, tested with Postman. At my internship I built invoice REST APIs. Tell me what you'd like to connect and I'll say how I'd approach it.
+Yes: **REST APIs**, Odoo's **XML-RPC/JSON-RPC**, webhooks and scheduled jobs, tested with Postman. At Tidal Wave Infotech I built invoice REST APIs. Tell me what you'd like to connect and I'll say how I'd approach it.
 
 ## What are your skills?
 asked: skills | tech stack | technologies | tools | programming languages | python | postgresql | sql | linux | git | docker

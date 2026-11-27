@@ -292,7 +292,7 @@
 
   // ---------- Asking ----------
   // A question about money always gets the pricing answer, even when it names a project ("how much for a dashboard?")
-  const MONEY = /\b(how much|price|pricing|cost|costs|charge|charges|rate|rates|fee|fees|quote|quotation|budget)\b/i;
+  const MONEY = /\b(how much(?! (experience|time|years?|work|odoo|do you know))|price|pricing|cost|costs|charge|charges|rate|rates|fee|fees|quote|quotation|budget)\b/i;
   const PRICE_DATA = /variant|last (purchase |sale )?price|price (check|history|alert)|vendor price|purchase price/i;
 
   const answer = async (q) => {
@@ -396,7 +396,7 @@
   };
 
   const greet = () => {
-    add('bot', `<p>Hi, I'm Yusuf, an Odoo developer from Chennai. 👋</p><p>Ask me anything about my work, or tell me about your project. Everything here is written by me, and you can reach me directly on WhatsApp, e-mail or phone.</p>`);
+    add('bot', `<p>Hi, I'm Yusuf, an Odoo Techno-Functional Consultant from Chennai. 👋</p><p>Ask me anything about my work, or tell me about your project. Everything here is written by me, and you can reach me directly on WhatsApp, e-mail or phone.</p>`);
     setChips(START_CHIPS);
   };
 
