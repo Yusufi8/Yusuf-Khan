@@ -46,7 +46,7 @@ I live in **Chennai, Tamil Nadu, India**. That's also my hometown. My company, T
 I work with people on-site, remotely or hybrid, and I'm open to relocating abroad.
 
 ## Where do you work now?
-asked: current company | current job | employer | T&I | t and i projects | which company | present company
+asked: current company | current job | employer | T&I | t and i projects | which company | present company | job title | your title | designation | current role | current position
 next: What have you built? | How much experience do you have?
 
 I'm an **Odoo Techno-Functional Consultant at T&I Projects Private Limited, Coimbatore** (since April 2026). I build and look after the company's Odoo 16 customisations across purchase, inventory, manufacturing, sales and export documents, and I train the teams who use them.
