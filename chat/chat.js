@@ -291,14 +291,20 @@
   };
 
   // ---------- Asking ----------
+  // A question about money always gets the pricing answer, even when it names a project ("how much for a dashboard?")
+  const MONEY = /\b(how much|price|pricing|cost|costs|charge|charges|rate|rates|fee|fees|quote|quotation|budget)\b/i;
+  const PRICE_DATA = /variant|last (purchase |sale )?price|price (check|history|alert)|vendor price|purchase price/i;
+
   const answer = async (q) => {
-    const { top: [score, i], near } = await best(q);
+    let { top: [score, i], near } = await best(q);
+    const pricing = MONEY.test(q) && !PRICE_DATA.test(q) ? entries.findIndex((e) => e.q === 'What do you charge?') : -1;
+    if (pricing > -1) { score = 1; i = pricing; }
     if (score >= MATCH) {
       const e = entries[i];
       return reply(render(e.text) + buttons(e.buttons), e.next.length ? e.next : START_CHIPS);
     }
     const msg = `Hi Yusuf, I have a question from your website: ${q}`;
-    return reply(`<p>I don't have an answer for that one yet, so ask me directly and I'll reply myself.</p>
+    return reply(`<p>That isn't in my answers yet. Ask me directly on WhatsApp or by e-mail and I'll reply myself.</p>
       <div class="chat-acts">
         <a class="chat-act chat-wa" href="${wa(msg)}" target="_blank" rel="noopener">${icon('whatsapp')}Ask on WhatsApp</a>
         <a class="chat-act" href="${mail('A question from your website', msg)}">${icon('mail')}E-mail</a>

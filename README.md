@@ -40,7 +40,9 @@ ready-written WhatsApp or e-mail message. Contact details and the Instagram link
 
 - The problem picker ("What's slowing your business down?") and "How I work" are tab panels in `index.html`.
   Any button with `data-chat="question"` opens the chat with that question, and `data-chat-flow="project"` or `"job"` starts a flow.
-- Home-page projects are `<article class="case">` blocks in `index.html`; each links to its case study.
+- Home-page projects are `<article class="project">` blocks (with a clickable screen) and `<article class="case">` cards in `index.html`.
+- The clickable Odoo screens live in `screens/`: `<div data-screen="requisition|variant|packing|management|people">` draws one.
+  They are redrawn from the current versions of my modules with sample data only (User 1, Hex Bolt, Sample Exports), never real company records.
 - Each case study has the same sections: problem, solution, contribution, workflow, architecture, technologies, testing, status.
   The architecture diagram is plain HTML (`.arch` layers), so it reflows on phones.
 - Colours and fonts are CSS variables at the top of `style.css`; light-theme colours are chosen to meet WCAG AA contrast.

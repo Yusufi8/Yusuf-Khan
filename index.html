@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="screens/screens.css">
 
   <!-- Applies the saved theme before paint so there is no flash -->
   <script>
@@ -204,38 +205,38 @@
             </div>
 
             <div class="solve-panel" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
-              <p class="solve-tag mono">OWL dashboards</p>
-              <h3>Dashboards that show what's late, right now</h3>
-              <ol class="flow">
-                <li style="--i:0">Late now</li><li style="--i:1">Shortages</li><li style="--i:2">Waiting approval</li><li style="--i:3">Vendor on-time</li><li style="--i:4">Time per step</li>
-              </ol>
-              <p>A management dashboard and a My Work page for every role, built with OWL. Late items first, filtered by period, department and person, and each role sees only its own tabs.</p>
-              <div class="solve-acts">
-                <a class="btn btn-ghost btn-sm" href="work/material-requisition/">See screenshots<svg><use href="#i-arrow"/></svg></a>
+                <p class="solve-tag mono">OWL · TI Dashboards › Management</p>
+                <h3>One page for directors and managers</h3>
+                <ol class="flow">
+                  <li style="--i:0">Pick a period</li><li style="--i:1">Compare</li><li style="--i:2">7 tabs by role</li><li style="--i:3">Process flow</li><li style="--i:4">Open the records</li>
+                </ol>
+                <p>What was done in a period and what is open now, for Sales, Purchase, Inventory, Manufacturing and Requisitions, compared with the period before. Each role sees only its own tabs, and every number opens the records behind it.</p>
+                <div class="solve-acts">
+                <a class="btn btn-ghost btn-sm" href="#work">Try it<svg><use href="#i-arrow"/></svg></a>
                 <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the dashboards"><svg><use href="#i-chat"/></svg>Ask about it</button>
               </div>
             </div>
 
             <div class="solve-panel" role="tabpanel" id="p-login" aria-labelledby="t-login" hidden>
-              <p class="solve-tag mono">People tracking</p>
-              <h3>Know who really did it, even on a shared login</h3>
-              <ol class="flow">
-                <li style="--i:0">Log in</li><li style="--i:1">Pick your name</li><li style="--i:2">Enter PIN</li><li style="--i:3">Every action recorded</li>
-              </ol>
-              <p>After logging in, each person picks their name and enters their own PIN. Every create, confirm and approve across about 40 document types is recorded under that person, and managers get a work-by-person report.</p>
-              <div class="solve-acts">
+                <p class="solve-tag mono">People tracking</p>
+                <h3>Know who really did it, even on a shared login</h3>
+                <ol class="flow">
+                  <li style="--i:0">Log in</li><li style="--i:1">Pick your name</li><li style="--i:2">Enter your PIN</li><li style="--i:3">Every action recorded</li>
+                </ol>
+                <p>After logging in, each person picks their name and enters their own 4-digit Login PIN. Everything they do is recorded under their name, the others on that login don't see their documents, and directors get Work by Person and Activities reports.</p>
+                <div class="solve-acts">
                 <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about people tracking on a shared login"><svg><use href="#i-chat"/></svg>Ask about it</button>
               </div>
             </div>
 
             <div class="solve-panel" role="tabpanel" id="p-pack" aria-labelledby="t-pack" hidden>
-              <p class="solve-tag mono">QWeb reports</p>
-              <h3>Export packing lists and stickers, straight from Odoo</h3>
-              <ol class="flow">
-                <li style="--i:0">Delivery</li><li style="--i:1">Packing details</li><li style="--i:2">Weights calculated</li><li style="--i:3">Packing list PDF</li><li style="--i:4">Package stickers</li>
-              </ol>
-              <p>The packing list prints in the company's own export layout, with package-wise stickers on a custom paper size. Net and gross weights come from the products automatically, so nothing is typed twice.</p>
-              <div class="solve-acts">
+                <p class="solve-tag mono">QWeb reports · Packing List &amp; Packing Slip</p>
+                <h3>Export packing lists and stickers, straight from Odoo</h3>
+                <ol class="flow">
+                  <li style="--i:0">Fill Export Defaults</li><li style="--i:1">Fetch Goods</li><li style="--i:2">Packing details</li><li style="--i:3">Print PL</li><li style="--i:4">Print Packing Slip</li>
+                </ol>
+                <p>A Packing List tab on the delivery in four steps. Page 2 can never pack more than page 1, boxes of spares list their contents, and weights are calculated as you type. The Packing List and one sticker per package print in the company's export layout.</p>
+                <div class="solve-acts">
                 <a class="btn btn-ghost btn-sm" href="work/export-packing/">Case study<svg><use href="#i-arrow"/></svg></a>
                 <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the export packing documents"><svg><use href="#i-chat"/></svg>Ask about it</button>
               </div>
@@ -254,15 +255,15 @@
             </div>
 
             <div class="solve-panel" role="tabpanel" id="p-var" aria-labelledby="t-var" hidden>
-              <p class="solve-tag mono">Variant configurator · manufacturing</p>
-              <h3>Pick the exact variant, everywhere it matters</h3>
-              <ol class="flow">
-                <li style="--i:0">Attribute pop-up</li><li style="--i:1">Exact variant</li><li style="--i:2">Variant Part List</li><li style="--i:3">Drawing revision</li>
-              </ol>
-              <p>Users choose the exact variant from an attribute pop-up in requests, BoMs and manufacturing orders. Part Lists print the variant code and attributes, and drawings carry numbered revisions with approval.</p>
-              <div class="solve-acts">
+                <p class="solve-tag mono">Variant configurator · Variant Selection Rules</p>
+                <h3>Pick the exact variant, and see what it cost</h3>
+                <ol class="flow">
+                  <li style="--i:0">Rule: Variant Mode</li><li style="--i:1">Attribute pop-up</li><li style="--i:2">Price panel</li><li style="--i:3">Exact variant on the line</li>
+                </ol>
+                <p>An administrator switches any screen's product field to Variant Mode with a rule, no code per screen. The pop-up picks the exact variant and shows this vendor's price, the last price paid, other vendors and open RFQs.</p>
+                <div class="solve-acts">
                 <a class="btn btn-ghost btn-sm" href="work/variant-configurator/">Case study<svg><use href="#i-arrow"/></svg></a>
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about manufacturing"><svg><use href="#i-chat"/></svg>Ask about it</button>
+                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the variant configurator"><svg><use href="#i-chat"/></svg>Ask about it</button>
               </div>
             </div>
 
@@ -287,34 +288,105 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow">Work</p>
-          <h2>Selected projects</h2>
+          <h2>Projects</h2>
+          <p class="section-sub">Click around the screens. Each one is redrawn from a module I built, with sample data, so no company records are shown.</p>
         </header>
 
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project-text">
+              <div class="project-intro">
+              <p class="case-where">T&amp;I Projects Private Limited · Odoo 16 Enterprise</p>
+              <h3>Material &amp; Purchase Requisition</h3>
+              <p>Workers ask for material from a short pop-up. The Production Manager approves, stores check stock and issue it, and anything short goes to a director. Once approved, a purchase requisition is created and sent to Purchase automatically. Every step is recorded with who did it and when.</p>
+              </div>
+              <div class="project-side">
+              <ul class="case-points"><li>8 modules, 260+ automated tests</li><li>Approve or refuse straight from the e-mail</li><li>Two paths: all in stock, or short and through purchase</li></ul>
+              <p class="project-try"><span class="mono">Try it</span><span>In the pop-up, press <b>Submit Request</b> and move the request step by step: the Welding Rod is short, so it takes the director path. Set its Qty to 8 or less and it goes straight to the issue.</span></p>
+              <div class="case-actions"><a class="btn btn-primary btn-sm" href="work/material-requisition/">View project<svg><use href="#i-arrow"/></svg></a><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the requisition workflow"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
+              </div>
+            </div>
+            <figure class="screen">
+              <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · Request Materials · sample data</span></div>
+              <div data-screen="requisition"><p class="screen-fallback">A material request in Odoo: a short pop-up, then manager approval, stock check, and either the issue or the shortage path through a director and a purchase requisition.</p></div>
+            </figure>
+          </article>
+          <article class="project reveal">
+            <div class="project-text">
+              <div class="project-intro">
+              <p class="case-where">T&amp;I Projects Private Limited · Odoo 16</p>
+              <h3>Variant Configurator with purchase prices</h3>
+              <p>An administrator decides which pages pick the exact product variant. A <b>Variant Selection Rule</b> switches a product field (on one view or on every view) to Variant Mode, with no code per screen. The pop-up then shows what the variant costs: this vendor's price, the last price paid, other vendors and open RFQs.</p>
+              </div>
+              <div class="project-side">
+              <ul class="case-points"><li>Rules for transfers, manufacturing orders, scrap and more</li><li>Vendor prices per variant, not one price for all</li><li>Last purchase price and an alert when an RFQ price jumps</li></ul>
+              <p class="project-try"><span class="mono">Try it</span><span>Open <b>Transfer</b> and type "bolt": every variant is listed. Then in <b>Variant Selection Rules</b> switch <i>Transfers - Operations</i> on and try again. In <b>Purchase</b>, pick variants and watch the prices change.</span></p>
+              <div class="case-actions"><a class="btn btn-primary btn-sm" href="work/variant-configurator/">View project<svg><use href="#i-arrow"/></svg></a><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the variant configurator"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
+              </div>
+            </div>
+            <figure class="screen">
+              <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · Variant Selection Rules · sample data</span></div>
+              <div data-screen="variant"><p class="screen-fallback">The Variant Selection Rules list, a transfer whose product field switches between normal and variant selection, the configurator pop-up with the variant's purchase prices, and the variant's Purchase tab.</p></div>
+            </figure>
+          </article>
+          <article class="project reveal">
+            <div class="project-text">
+              <div class="project-intro">
+              <p class="case-where">T&amp;I Projects Private Limited · Odoo 16</p>
+              <h3>Export Packing: Packing List and Packing Slip</h3>
+              <p>The export team used to type packing lists in Word. Now a delivery has a <b>Packing List</b> tab in four steps, and Odoo prints the <b>Packing List (PL)</b> and one <b>Packing Slip (PS)</b> sticker per package in the company's export layout, with weights calculated as you type.</p>
+              </div>
+              <div class="project-side">
+              <ul class="case-points"><li>Page 2 can divide page 1, never pack more</li><li>Boxes of mixed spares with their contents</li><li>More than 20 versions, each checked on a copy of the live database first</li></ul>
+              <p class="project-try"><span class="mono">Try it</span><span>Press <b>Fill Export Defaults</b>, <b>Fetch Goods</b> and <b>Add all products</b>. Change a Qty or Gross %, then <b>Print PL</b> or <b>Print Packing Slip</b>.</span></p>
+              <div class="case-actions"><a class="btn btn-primary btn-sm" href="work/export-packing/">View project<svg><use href="#i-arrow"/></svg></a><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the export packing documents"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
+              </div>
+            </div>
+            <figure class="screen">
+              <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · Packing List tab · sample data</span></div>
+              <div data-screen="packing"><p class="screen-fallback">The Packing List tab of an export delivery in four steps, and the Packing List and Packing Slip it prints.</p></div>
+            </figure>
+          </article>
+          <article class="project reveal">
+            <div class="project-text">
+              <div class="project-intro">
+              <p class="case-where">T&amp;I Projects Private Limited · Odoo 16 · OWL</p>
+              <h3>Management Dashboard</h3>
+              <p>One page for directors and managers: what was done in a period and what is open now, per area. Each role sees only its own tabs, every number can be compared with another period, and every number opens the records behind it. Facts only, no ranking of people.</p>
+              </div>
+              <div class="project-side">
+              <ul class="case-points"><li>7 tabs, from Sales to the Process flow</li><li>Filters by period, department and employee, also on shared logins</li><li>Each tab is read with the user's own access rights</li></ul>
+              <p class="project-try"><span class="mono">Try it</span><span>Change the <b>Period</b> or <b>Compare with</b>, open a tab, press a <b>?</b>. Then open it as a Purchase or Sales Manager and see the tabs change.</span></p>
+              <div class="case-actions"><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the dashboards"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
+              </div>
+            </div>
+            <figure class="screen">
+              <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · TI Dashboards › Management · sample data</span></div>
+              <div data-screen="management"><p class="screen-fallback">The Management dashboard: tabs for Overview, Sales, Purchase, Inventory, Manufacturing, Requisitions and Process flow, with period and comparison filters.</p></div>
+            </figure>
+          </article>
+          <article class="project reveal">
+            <div class="project-text">
+              <div class="project-intro">
+              <p class="case-where">T&amp;I Projects Private Limited · Odoo 16</p>
+              <h3>People Tracking with Login PIN</h3>
+              <p>On the shop floor several people share one Odoo login. Each person taps their name and enters their own 4-digit Login PIN, so every step is saved under the real person, and the others on that login do not see their documents. Five wrong PINs lock the name until an administrator resets it.</p>
+              </div>
+              <div class="project-side">
+              <ul class="case-points"><li>Names on every step and in every chatter line</li><li>Managers on their own login are never asked</li><li>Work by Person and Activities reports</li></ul>
+              <p class="project-try"><span class="mono">Try it</span><span>Pick <b>User 1</b> (PIN <b>1234</b>) and press Request. Tap the name at the top, switch to <b>User 3</b> and set a new PIN. Try a wrong PIN five times.</span></p>
+              <div class="case-actions"><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about people tracking on a shared login"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
+              </div>
+            </div>
+            <figure class="screen">
+              <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · shared login · sample data</span></div>
+              <div data-screen="people"><p class="screen-fallback">A "Choose your name to start" window with User 1, User 2 and User 3. Each enters a Login PIN, and the request records who did each step.</p></div>
+            </figure>
+          </article>
+        </div>
+
+        <h3 class="sub-head">More projects</h3>
         <div class="cases">
-          <article class="case case-feature reveal">
-            <a class="case-shot" href="work/material-requisition/" tabindex="-1" aria-hidden="true"><img src="images/work/requisition-dashboard.webp" width="800" height="703" alt="" loading="lazy" decoding="async"></a>
-            <p class="case-where">T&amp;I Projects · Odoo 16 Enterprise</p>
-            <h3>Material &amp; Purchase Requisition</h3>
-            <p>Material requests, approvals, stock checks, issue from stores and purchasing, all in one Odoo flow, with a dashboard for each team.</p>
-            <ul class="tags"><li>8 modules</li><li>260+ tests</li><li>Approvals by e-mail</li><li>OWL dashboards</li></ul>
-            <a class="case-link case-link-strong" href="work/material-requisition/">View project<svg><use href="#i-arrow"/></svg></a>
-          </article>
-
-          <article class="case reveal">
-            <a class="case-shot" href="work/export-packing/" tabindex="-1" aria-hidden="true"><img src="images/work/export-packing-details.webp" width="1200" height="793" alt="" loading="lazy" decoding="async"></a>
-            <p class="case-where">T&amp;I Projects · Odoo 16</p>
-            <h3>Export Packing Documents</h3>
-            <p>Packing lists and package stickers that match the company's export template, with weights calculated automatically.</p>
-            <a class="case-link case-link-strong" href="work/export-packing/">View project<svg><use href="#i-arrow"/></svg></a>
-          </article>
-
-          <article class="case reveal">
-            <p class="case-where">T&amp;I Projects · Odoo 16</p>
-            <h3>TI Variant Configurator</h3>
-            <p>Lets Purchase, BoM and requisitions pick the exact product variant from an attribute pop-up.</p>
-            <a class="case-link case-link-strong" href="work/variant-configurator/">View project<svg><use href="#i-arrow"/></svg></a>
-          </article>
-
           <article class="case case-own reveal">
             <p class="case-where">Personal project · Python · FastAPI</p>
             <h3>Elakku</h3>
@@ -325,8 +397,6 @@
 
         <h3 class="sub-head">More of my Odoo work <span class="sub-note">Tap one to ask about it</span></h3>
         <ul class="mini-grid">
-          <li class="mini reveal"><button type="button" data-chat="Tell me about the dashboards"><span class="mono">Odoo 16 · OWL</span><strong>Management dashboards</strong><span>Late work, shortages, time per step</span></button></li>
-          <li class="mini reveal"><button type="button" data-chat="Tell me about people tracking on a shared login"><span class="mono">Odoo 16</span><strong>People tracking with PIN</strong><span>Who did what on a shared login</span></button></li>
           <li class="mini reveal"><button type="button" data-chat="Tell me about the variant pricing"><span class="mono">Odoo 16 · 5 modules</span><strong>Variant price suite</strong><span>Last price, alerts, Price Check app</span></button></li>
           <li class="mini reveal"><button type="button" data-chat="Tell me about manufacturing"><span class="mono">Odoo 16 · MRP</span><strong>Manufacturing reports</strong><span>Part Lists, drawing revisions, job cards</span></button></li>
           <li class="mini reveal"><button type="button" data-chat="How do you handle access rights?"><span class="mono">Odoo 16 · Security</span><strong>Access roles</strong><span>Job roles and a master-data guard</span></button></li>
@@ -480,27 +550,9 @@
     <!-- Contact -->
     <section id="contact" class="section contact">
       <div class="container">
-        <p class="eyebrow">Let's talk</p>
-        <h2 class="contact-title">Tell me what you need.</h2>
-        <p class="section-sub">I'll reply with a few questions, then a <strong>quote and timeline</strong>. Every project is different, and my rates are flexible.</p>
-
-        <div class="start-grid">
-          <button type="button" class="start reveal" data-chat-flow="project">
-            <span class="start-icon"><svg><use href="#i-chat"/></svg></span>
-            <strong>I have a project</strong>
-            <span>Three quick questions, then a ready message for WhatsApp or e-mail.</span>
-          </button>
-          <button type="button" class="start reveal" data-chat-flow="job">
-            <span class="start-icon"><svg><use href="#i-arrow"/></svg></span>
-            <strong>I'm hiring</strong>
-            <span>For a full-time role, in Chennai, remote or abroad.</span>
-          </button>
-          <button type="button" class="start reveal" data-chat>
-            <span class="start-icon"><svg><use href="#i-chat"/></svg></span>
-            <strong>Just a question</strong>
-            <span>Ask my chat anything about my work and skills.</span>
-          </button>
-        </div>
+        <p class="status"><span class="dot" aria-hidden="true"></span>Open to work</p>
+        <h2 class="contact-title">Open to full-time roles, contracts and freelance work.</h2>
+        <p class="section-sub">I help businesses solve real problems with Odoo ERP. Let's talk about your project, a <strong>full-cycle ERP implementation</strong> from requirements to go-live, or anything else in ERP and technology.</p>
 
         <div class="contact-row">
           <a href="https://wa.me/918925788226?text=Hi%20Yusuf%2C%20I%20found%20you%20through%20your%20website." class="btn btn-primary btn-lg" target="_blank" rel="noopener"><svg><use href="#i-whatsapp"/></svg>WhatsApp</a>
@@ -544,6 +596,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="/screens/screens.js" defer></script>
   <script src="/chat/chat.js" defer></script>
 </body>
 </html>

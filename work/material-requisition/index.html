@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/screens/screens.css">
 
   <script>
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -102,11 +103,11 @@
             <h2>What I built</h2>
             <ul class="cs-list">
               <li><strong>Material requests</strong> as structured documents, with requester, department and business references.</li>
-              <li><strong>Approval workflow</strong>: supervisor approval, then inventory review, with <strong>personal, login-protected approval links</strong> in the e-mails.</li>
+              <li><strong>Approval workflow</strong>: Production Manager approval, then inventory review, with <strong>personal, login-protected approval links</strong> in the e-mails.</li>
               <li><strong>Stock check and material issue</strong> through real stock transfers, including partial issue and returns.</li>
               <li><strong>Purchase requisitions</strong> for shortages, approved by a director, then vendor quotes, <strong>RFQ</strong> and <strong>PO approval by order amount</strong>.</li>
               <li><strong>Receipt and issue</strong> back to the requester once goods arrive.</li>
-              <li><strong>Dashboards</strong>: late work by team, requests that are short, approvals waiting, vendor on-time rate, and a <strong>My Work</strong> list for each role.</li>
+              <li><strong>Management dashboard</strong> for directors and managers: requests raised and issued, request → issue and PR → PO times, shortages, and a process flow of where documents wait, by period and department.</li>
               <li><strong>Product variants</strong> through the TI Variant Configurator, so requests name the exact variant.</li>
             </ul>
           </section>
@@ -114,20 +115,27 @@
           <section class="cs-section" id="workflow">
             <h2>How it works</h2>
             <ol class="steps">
-              <li><strong>Request</strong>A production user raises and submits a material request.</li>
-              <li><strong>Supervisor</strong>The supervisor approves, from Odoo or the e-mail link.</li>
+              <li><strong>Request</strong>A production user answers a short Request Materials pop-up and submits it.</li>
+              <li><strong>Manager</strong>The Production Manager approves, from Odoo or the e-mail link.</li>
               <li><strong>Stores</strong>Inventory reviews availability and issues what is in stock.</li>
-              <li><strong>Shortage</strong>Items short become a purchase requisition for the director to approve.</li>
+              <li><strong>Shortage</strong>Short items go to a director. Once approved, a purchase requisition is created and sent to Purchase automatically.</li>
               <li><strong>Purchase</strong>Vendor quotes, RFQ, and PO approval by order amount.</li>
               <li><strong>Receive &amp; issue</strong>Goods are received and issued to the requester.</li>
             </ol>
           </section>
 
           <section class="cs-section" id="screens">
-            <h2>Screens</h2>
-            <div class="shots">
-              <figure class="shot"><img src="/images/work/requisition-dashboard.webp" width="800" height="703" alt="Odoo dashboard showing late documents, requests short of stock, approvals waiting and vendor on-time rate, with late work by team" loading="lazy" decoding="async"><figcaption>Dashboard: late documents, shortages, approvals waiting, vendor on-time rate and late work by team. Test data.</figcaption></figure>
-              <figure class="shot"><img src="/images/work/requisition-my-work.webp" width="800" height="527" alt="My Work page for a purchase manager listing late purchase documents to open" loading="lazy" decoding="async"><figcaption>My Work for a purchase manager: what to do now, late items first. Test data.</figcaption></figure>
+            <h2>Try it</h2>
+            <p>Both screens are redrawn from the modules with sample data, so you can click through them. In the first, change the request in the pop-up, submit it and move it step by step. In the second, the Management dashboard directors and managers open: change the period, open a tab, or open it as another role.</p>
+            <div class="shots-live">
+              <figure class="screen">
+                <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · Request Materials · sample data</span></div>
+                <div data-screen="requisition"><p class="screen-fallback">A material request in Odoo: a short pop-up, then manager approval, stock check, and either the issue or the shortage path through a director and a purchase requisition, each step recorded with the person and time.</p></div>
+              </figure>
+              <figure class="screen">
+                <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · TI Dashboards › Management · sample data</span></div>
+                <div data-screen="management"><p class="screen-fallback">The dashboard: late documents, items short for a request, approvals waiting and vendor on-time rate, then late work by team and the oldest late documents.</p></div>
+              </figure>
             </div>
           </section>
 
@@ -175,6 +183,7 @@
   </footer>
 
   <script src="/script.js"></script>
+  <script src="/screens/screens.js" defer></script>
   <script src="/chat/chat.js" defer></script>
 </body>
 </html>

@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/screens/screens.css">
 
   <script>
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -80,8 +81,8 @@
       <div class="container">
         <a class="crumb" href="/#work">← Back to work</a>
         <p class="case-where">T&amp;I Projects · Odoo 16 QWeb</p>
-        <h1>Export Packing Customization</h1>
-        <p class="cs-lede">Export packing list and packing slip PDF reports rebuilt in QWeb to match the business's own export document template, with configuration options for the people who print them.</p>
+        <h1>Export Packing: Packing List and Packing Slip</h1>
+        <p class="cs-lede">An Odoo 16 module that turns an export delivery into the Packing List (PL) and one Packing Slip (PS) sticker per package, in the company's EX053 layout, with weights calculated as you type.</p>
         <dl class="cs-meta">
           <div><dt>Role</dt><dd>Developer</dd></div>
           <div><dt>Company</dt><dd>T&amp;I Projects Private Limited</dd></div>
@@ -94,39 +95,49 @@
       <div class="cs-body">
           <section class="cs-section" id="problem">
             <h2>The problem</h2>
-            <p>Export shipments need packing documents in the business's own format. The standard Odoo layouts didn't match it, so documents needed manual preparation outside the ERP.</p>
+            <p>The export team typed packing lists in Word for every shipment: a goods summary, then every box with its contents and weights, then a sticker per package. Quantities and weights were copied by hand, and a mistake meant redoing the whole document.</p>
           </section>
 
           <section class="cs-section" id="solution">
             <h2>What I built</h2>
             <ul class="cs-list">
-              <li><strong>Export packing list</strong> and <strong>packing slip</strong> QWeb PDF reports.</li>
-              <li>Layouts matched to the <strong>business document template</strong>, with package-level details and product lines.</li>
-              <li><strong>Configurable report fields</strong> to choose what is printed.</li>
-              <li><strong>Logo display</strong> setting.</li>
-              <li><strong>Port</strong> and <strong>package-type</strong> selection.</li>
+              <li>A <strong>Packing List tab</strong> on every delivery, in four steps: header, page 1 goods summary, page 2 packing details, then check and print.</li>
+              <li><strong>Fill Export Defaults</strong> fills only the empty header fields from the customer, the sales order and its invoice. <strong>Fetch Goods</strong> brings page 1 up to the delivered quantities.</li>
+              <li><strong>Add all products</strong> fills page 2 from each product's packing data: packing type, size, quantity per package, weight and gross %.</li>
+              <li><strong>Page 2 divides page 1, never more</strong>: a row can't pack more than page 1, and the rest goes to the next row. Yellow warnings show what is still to pack.</li>
+              <li><strong>Contents</strong> per package: a box of mixed spares lists every item with its quantity, with no product needed.</li>
+              <li>Net = Qty × Unit Wt and Gross = Net + Gross %, as you type. Long packages continue over the next page with "(continued)".</li>
+              <li><strong>Print PL</strong> and <strong>Print Packing Slip</strong>: QWeb PDF reports in the company's export layout.</li>
             </ul>
           </section>
 
           <section class="cs-section" id="workflow">
             <h2>How it works</h2>
             <ol class="steps">
-              <li><strong>Prepare</strong>Packing data is recorded on the shipment in Odoo.</li>
-              <li><strong>Configure</strong>The user selects port, package type, fields and logo display.</li>
-              <li><strong>Print</strong>Odoo renders the packing list or packing slip as a PDF.</li>
+              <li><strong>Header</strong>Fill Export Defaults, then check consignee, shipping mark, ports and vessel.</li>
+              <li><strong>Page 1</strong>Fetch Goods: one line per product with its delivered quantity.</li>
+              <li><strong>Page 2</strong>Add all products, or one row per package group, with contents and weights.</li>
+              <li><strong>Print</strong>Read the warnings, check the totals, then Print PL or Print Packing Slip.</li>
             </ol>
           </section>
 
-          <section class="cs-section" id="screens">
-            <h2>Screens</h2>
-            <div class="shots">
-              <figure class="shot"><img src="/images/work/export-packing-details.webp" width="1200" height="793" alt="Odoo delivery form with the packing details table: packing type, size, printed quantity, net and gross weight and package numbers" loading="lazy" decoding="async"><figcaption>Packing details on a delivery: one row per product with packing type, size, weights and package numbers. Product names and descriptions are blurred.</figcaption></figure>
-            </div>
+          <section class="cs-section" id="try">
+            <h2>Try it</h2>
+            <p>Redrawn from the current module (16.0.8.1.1) with sample data. Press the buttons in order, change a Qty (try more than page 1) or a Gross %, then print the Packing List or flip through the Packing Slip stickers.</p>
+            <figure class="screen">
+              <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · Packing List tab · sample data</span></div>
+              <div data-screen="packing"><p class="screen-fallback">The Packing List tab of an export delivery in four steps, and the Packing List and Packing Slip it prints.</p></div>
+            </figure>
+          </section>
+
+          <section class="cs-section" id="versions">
+            <h2>Versions</h2>
+            <p>More than 20 versions as the export team asked for changes, each with an upgrade script, a tagged commit and a changelog entry, and each checked on a copy of the live database before it went live (page 2, stickers and totals the same).</p>
           </section>
 
           <section class="cs-section" id="stack">
             <h2>Built with</h2>
-            <ul class="tags"><li>QWeb</li><li>Python</li><li>Odoo ORM</li><li>XML</li><li>PDF reports</li><li>Odoo 16</li></ul>
+            <ul class="tags"><li>QWeb PDF reports</li><li>Python</li><li>Odoo ORM</li><li>XML views</li><li>Inventory</li><li>Odoo 16</li></ul>
           </section>
 
           <nav class="cs-next" aria-label="More case studies">
@@ -168,6 +179,7 @@
   </footer>
 
   <script src="/script.js"></script>
+  <script src="/screens/screens.js" defer></script>
   <script src="/chat/chat.js" defer></script>
 </body>
 </html>

@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/screens/screens.css">
 
   <script>
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -80,8 +81,8 @@
       <div class="container">
         <a class="crumb" href="/#work">← Back to work</a>
         <p class="case-where">T&amp;I Projects · Odoo 16</p>
-        <h1>TI Variant Configurator</h1>
-        <p class="cs-lede">An Odoo 16 customization that lets Purchase, Bills of Materials and Material Requisition select the exact product variant, where the standard flows select at product level.</p>
+        <h1>Variant Configurator with purchase prices</h1>
+        <p class="cs-lede">Odoo 16 modules that let an administrator choose which screens pick the exact product variant, and show what each variant costs right in the pop-up: this vendor's price, the last price paid, other vendors and open RFQs.</p>
         <dl class="cs-meta">
           <div><dt>Role</dt><dd>Developer</dd></div>
           <div><dt>Company</dt><dd>T&amp;I Projects Private Limited</dd></div>
@@ -94,31 +95,43 @@
       <div class="cs-body">
           <section class="cs-section" id="problem">
             <h2>The problem</h2>
-            <p>Several standard Odoo flows select products at product (template) level. The business needed purchase orders, bills of materials and material requisitions to name the specific variant, so the right item is bought, built and issued.</p>
+            <p>Products such as bolts, motors and pipes come in many variants (size, length, finish). Several standard Odoo screens pick a product, not the exact variant, and a vendor price set for the whole product was offered for every variant: a 15 HP price for a 5 HP motor. Buyers could not see what a variant had cost before without searching old orders.</p>
           </section>
 
           <section class="cs-section" id="solution">
             <h2>What I built</h2>
             <ul class="cs-list">
-              <li>Adapted an existing product configurator for <strong>variant-level selection</strong>.</li>
-              <li>Enabled it in <strong>Purchase</strong>, <strong>Bills of Materials</strong> and <strong>Material Requisition</strong>.</li>
-              <li>Downstream documents carry the selected variant.</li>
+              <li><strong>Variant Selection Rules</strong> (Manufacturing › Configuration): an administrator switches any product field to <strong>Variant Mode</strong> or back to <strong>Normal Mode</strong>, on one view or on every view, for chosen groups or companies, with no code per screen. A Coverage box lists every view where the rule applies or was skipped.</li>
+              <li>Shipped rules for manufacturing orders (product, components and by-products), and switched-off examples for transfers and scrap. Bills of Materials, material requests and the Request Materials pop-up use registered adapters.</li>
+              <li>In Variant Mode, typing lists the product once (<em>Hex Bolt (10 variants)</em>), and choosing it opens the configurator with the line's quantity. Combinations that don't exist can't be confirmed.</li>
+              <li>A <strong>purchase price panel</strong> in the pop-up: this vendor's price list entry, last bought (net price, vendor, date, PO), up to 3 other vendors and open RFQs, updated as the variant changes. Shown to the purchase team only.</li>
+              <li><strong>Vendor prices per variant</strong>: a variant's own price wins over that vendor's price for the whole product, and confirmed orders record the price for the variant bought.</li>
+              <li><strong>Last Purchase Price (Variant)</strong> on each variant, and an alert on RFQ lines when the price moves past a set percentage (5% by default).</li>
             </ul>
           </section>
 
           <section class="cs-section" id="workflow">
             <h2>How it works</h2>
             <ol class="steps">
-              <li><strong>Open document</strong>A user works on a PO, BoM or material requisition.</li>
-              <li><strong>Configure</strong>They pick the product and configure the variant.</li>
-              <li><strong>Resolve</strong>The matching variant is placed on the line.</li>
-              <li><strong>Continue</strong>Standard purchasing, manufacturing or issue flows use that variant.</li>
+              <li><strong>Set up</strong>The administrator switches a screen's product field to Variant Mode with a rule.</li>
+              <li><strong>Pick</strong>On that screen, the user types the product and chooses size, length and finish in the pop-up.</li>
+              <li><strong>Check the price</strong>The panel shows this vendor's price, the last price paid, other vendors and open RFQs.</li>
+              <li><strong>Confirm</strong>The exact variant and quantity go on the line; Odoo's own onchanges run as usual.</li>
             </ol>
+          </section>
+
+          <section class="cs-section" id="try">
+            <h2>Try it</h2>
+            <p>Redrawn from the current modules with sample data. Open <strong>Transfer</strong> and type "bolt": with the rule off, Odoo lists every variant. Switch <em>Transfers - Operations</em> on in <strong>Variant Selection Rules</strong> and type again. In <strong>Purchase</strong>, pick variants and watch the prices change; <strong>Product variant</strong> shows its vendor prices and last purchase.</p>
+            <figure class="screen">
+              <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Odoo 16 · Variant Selection Rules · sample data</span></div>
+              <div data-screen="variant"><p class="screen-fallback">The Variant Selection Rules list, a transfer whose product field switches between normal and variant selection, the configurator pop-up with the variant's purchase prices, and the variant's Purchase tab.</p></div>
+            </figure>
           </section>
 
           <section class="cs-section" id="stack">
             <h2>Built with</h2>
-            <ul class="tags"><li>Python</li><li>Odoo ORM</li><li>XML views</li><li>Product variants</li><li>Purchase</li><li>BoM / MRP</li></ul>
+            <ul class="tags"><li>Python</li><li>Odoo ORM</li><li>OWL / JavaScript</li><li>XML views</li><li>Product variants</li><li>Purchase</li><li>BoM / MRP</li></ul>
           </section>
 
           <nav class="cs-next" aria-label="More case studies">
@@ -160,6 +173,7 @@
   </footer>
 
   <script src="/script.js"></script>
+  <script src="/screens/screens.js" defer></script>
   <script src="/chat/chat.js" defer></script>
 </body>
 </html>

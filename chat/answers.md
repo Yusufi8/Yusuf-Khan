@@ -112,33 +112,60 @@ next: What have you built? | What are your skills?
 The ones I build on most: **Purchase, Inventory, Manufacturing (MRP), Sales, CRM and Invoicing**, plus the **Portal**, HR / Time Off, product variants and Bills of Materials. Accounting I know at a user level.
 
 ## What have you built?
-asked: projects | your work | portfolio | show me your work | what did you build at T&I | biggest project | best project | modules you made
-next: Tell me about the requisition workflow | Tell me about the dashboards | Tell me about the export packing documents | Tell me about your personal projects
+asked: projects | your work | portfolio | show me your work | what did you build at T&I | biggest project | best project | modules you made | examples of your work
+next: Tell me about the requisition workflow | Tell me about the variant configurator | Tell me about the export packing documents | Tell me about the dashboards
 buttons: work
 
-Some highlights from T&I (all Odoo 16):
-- **Requisition to procurement**: material requests, approvals (also from e-mail), stores issue, purchase requisitions, vendor quote comparison, RFQ and PO approval by amount.
-- **Management dashboards**: what's late, shortages, approvals waiting, vendor on-time rate, time per step.
-- **People tracking on a shared login**: each person picks their name and enters a PIN, so every action is recorded under the right person.
-- **Export packing documents**: packing lists and package stickers in the company's export layout, with weights calculated automatically.
-- **Variant pricing**: last purchase and sale price per variant, price alerts on RFQs, and a Price Check app.
-- **Manufacturing**: variant Part Lists, drawing revisions with approval, job cards and work-center load.
-- **Access rights**: one role per job, time-limited exceptions and a guard on master data.
+Some highlights from T&I Projects (all Odoo 16). You can click through the first five in the **Projects** section of this page:
+- **Material & purchase requisition**: a short pop-up to ask for material, manager approval (also from e-mail), stock check and issue, and a director-approved purchase requisition for anything short.
+- **Variant configurator with purchase prices**: rules that switch any screen to pick the exact variant, and a pop-up that shows what each variant cost.
+- **Export packing**: the Packing List and one Packing Slip sticker per package, in the company's export layout.
+- **Management dashboard**: one page for directors and managers, seven tabs, by period and role.
+- **People tracking with Login PIN**: on a shared login, every step is saved under the real person.
+- Also: **variant price history**, **manufacturing reports** and **access roles**.
 
 ## Tell me about the requisition workflow
-asked: material requisition | material request | purchase requisition | requisition | approval workflow | procurement | mr | pr
-next: How do approvals by e-mail work? | Tell me about the dashboards | How do you test your work?
+asked: material requisition | material request | purchase requisition | requisition | approval workflow | procurement | mr | pr | requisition to purchase | indent | store request | who approves a request | production manager approval
+next: How does someone request material? | What happens when stock is short? | Can I see who did each step?
 buttons: work
 
 It's my biggest project, a set of **8 Odoo modules** that replaces paper and chat messages for material:
-1. Production raises a **material request**.
-2. The Production Manager **approves**, in Odoo or straight from the e-mail.
-3. **Stores** check stock and issue what's available, with issue slips, partial issues and returns.
-4. Anything short becomes a **purchase requisition**.
-5. Purchasing collects **vendor quotes**, compares them side by side and raises the RFQ.
-6. The **PO is approved by amount**: bigger orders go to a higher approver.
+1. A worker asks for material from a short **Request Materials** pop-up.
+2. The **Production Manager approves**, in Odoo or straight from the e-mail.
+3. The **Inventory Manager** checks stock for each line, reserves it and issues it, with issue slips.
+4. Anything short goes to a **director**. Once approved, a **purchase requisition** is created and sent to Purchase automatically.
+5. Purchasing compares **vendor quotes**, raises the RFQ, and the **PO is approved by amount**.
+6. The person who asked marks it received, and the request is closed.
 
-Every step is timed and logged, so anyone can see where a document is waiting. The modules have more than 260 automated tests.
+Every step is recorded with who and when. The modules have more than 260 automated tests. You can try both paths (all in stock, or short) in the Projects section.
+
+## How does someone request material?
+asked: request materials | request wizard | wizard | popup | pop-up | how to raise a request | create material request | new request | form to request
+next: What happens when stock is short? | How do approvals by e-mail work?
+
+Nobody fills a long form. They press **Request Materials** and answer a short pop-up:
+- **Department**, **required by** date and **priority** (normal, urgent or critical).
+- The **sales order** or project it's for (and the manufacturing or work order, if any).
+- The **products**, unit and quantity needed. The pop-up shows how much is **in stock right now**, so short items are visible straight away.
+
+Then **Submit Request** sends it to the Production Manager, or **Save as Draft** keeps it for later. The Projects section has a clickable version.
+
+## What happens when stock is short?
+asked: shortage | short stock | out of stock | not in stock | stock not available | purchase requisition from shortage | reorder
+next: How do approvals by e-mail work? | Tell me about the dashboards
+
+The Inventory Manager checks every line. When something is short:
+1. The request becomes **Partially Available** and the shortage is sent to a **director** (Waiting for Approval).
+2. Once a director approves, a **purchase requisition** is created and sent to Purchase **automatically**, linked back to the request (PR Created).
+3. The stores then issue the material, and the person who asked marks it received.
+
+If the director rejects it, the request goes back to inventory review.
+
+## Can I see who did each step?
+asked: audit log | timeline | history | who approved | traceability | track changes | who did what | log | memorized | recorded | record of steps
+next: Tell me about people tracking on a shared login | Tell me about the requisition workflow
+
+Yes. Every request keeps a **Who Did What** tab (requested by, submitted, approved, reviewed, issued, received) with the person's name, the login used and the time. There's also an **audit log** and a **timeline** of every status change, so anyone can see where a document is and how long it waited at each step.
 
 ## How do approvals by e-mail work?
 asked: email approval | approve from email | mail approval | approval links | notifications
@@ -147,32 +174,56 @@ next: Tell me about the requisition workflow | Tell me about people tracking on 
 The approver gets an e-mail with **Approve** and **Reject** buttons. Each link is signed and works only once. Approving records the person, the time and their signature on the document. People who share one login each get their own copy of the e-mail.
 
 ## Tell me about the dashboards
-asked: dashboard | management dashboard | kpi | reports for management | owl | my work | analytics
-next: Tell me about the requisition workflow | Do you know JavaScript and OWL?
+asked: dashboard | management dashboard | kpi | reports for management | analytics | management report | business dashboard | ti dashboards | process flow
+next: What can the dashboard filter by? | Tell me about the requisition workflow | Do you know JavaScript and OWL?
 buttons: work
 
-I built two dashboards in Odoo with **OWL** (Odoo's JavaScript framework):
-- **Management dashboard**: what's late now, shortages, approvals waiting, vendor on-time rate, late work by team, time spent per step, and a funnel of the whole flow.
-- **Business dashboard**: Sales, Purchase, Inventory, Manufacturing and Requisitions tabs, filtered by period, department and person, showing only the tabs each role should see.
+The **Management** page (TI Dashboards, built in OWL) is one page for directors and managers: what was done in a period and what is open now, per area.
+- **Seven tabs**: Overview, Sales, Purchase, Inventory, Manufacturing, Requisitions and Process flow.
+- **Each role sees only its own tabs**: a Purchase Manager sees Overview, Purchase, Requisitions and Process flow; a Sales Manager sees Overview and Sales. The server enforces it.
+- Every number can be **compared** with the previous period or the same period last year, and every number **opens the records** behind it.
+- **Process flow** shows each step from request to issue, and from shortage to purchase to delivery: what's waiting now and the average working days per step.
 
-Each user also gets a **My Work** page: what to do now, late items first.
+Facts only: no ranking of people. You can click through it in the Projects section.
+
+## What can the dashboard filter by?
+asked: dashboard filters | filter by department | filter by employee | compare periods | period filter | currency filter | warehouse filter
+next: Tell me about the dashboards | Tell me about people tracking on a shared login
+
+Period (this month, last month, a month, quarter or year, or two dates), **Compare with**, Department, Warehouse, Project, Currency, and **Employee** by name or Employee ID. The employee filter works on shared logins too, because every step is recorded under the real person.
 
 ## Tell me about people tracking on a shared login
-asked: shared login | people tracking | pin | who did what | audit trail | user tracking | one login many people
-next: How do you handle access rights? | Tell me about the dashboards
+asked: shared login | people tracking | pin | login pin | who did what on shared login | user tracking | one login many people | common login | shop floor login | same login
+next: What if someone enters a wrong PIN? | Can I see who did each step? | How do you handle access rights?
+buttons: work
 
-A real problem at many factories: several people use **one Odoo login**. I built a module where, after logging in, each person picks their name and enters their own **PIN**. Every create, confirm and approve across about 40 document types is then recorded under that person, the chatter shows who really did it, and managers get a "work by person" report.
+A real problem in many companies: several people use **one Odoo login** on a shared computer. With my module:
+- After logging in, a **Choose your name to start** window lists the people. Each taps their name and enters their own **4-digit Login PIN**.
+- Everything they do is recorded under **their name**: created and last updated by, the key step of each app, and every chatter line.
+- The others on that login **don't see their documents**. The next person taps the name at the top to switch.
+- Managers and approvers on their own login are never asked.
+- Directors get **Work by Person** and **Activities** reports.
+
+Try it in the Projects section: User 1, PIN 1234.
+
+## What if someone enters a wrong PIN?
+asked: wrong pin | forgot pin | reset pin | pin security | change pin | lost pin | locked
+next: Tell me about people tracking on a shared login | How do you handle access rights?
+
+A wrong PIN is refused and shows how many tries are left. After **5 wrong tries the name is locked**. An administrator then uses **Change PIN** to set a new one, or **Reset PIN** so the person sets their own the next time. People set their own PIN the first time they choose their name.
 
 ## Tell me about the export packing documents
-asked: export packing | packing list | packing slip | stickers | export documents | qweb report | pdf reports
-next: Do you build custom reports? | Tell me about the variant pricing
+asked: export packing | packing list | packing slip | pl | ps | stickers | export documents | package sticker | ex053 | shipping documents
+next: Do you build custom reports? | Tell me about the variant configurator
+buttons: work
 
-The export team used to type packing lists in Word. I built them into Odoo:
-- A **packing list** in the company's export layout: one row per product with its packages.
-- **Package-wise stickers** on a custom paper size.
-- Weight, size and packing description stored on products and variants, with **net and gross weights calculated automatically**.
+The export team used to type packing lists in Word. Now every delivery has a **Packing List** tab in four steps:
+1. **Header**: Fill Export Defaults fills the empty fields from the customer, sales order and invoice.
+2. **Page 1**: Fetch Goods brings one line per product with its delivered quantity.
+3. **Page 2**: Add all products fills each package group from the product's packing data. A row can never pack more than page 1, and a box of spares lists its contents.
+4. **Print PL** (the Packing List) and **Print Packing Slip** (one sticker per package), in the company's export layout.
 
-The module has gone through 13 versions as the team asked for changes, each with an upgrade script.
+Net and gross weights are calculated as you type. More than 20 versions so far, each checked on a copy of the live database first. Try it in the Projects section.
 
 ## Do you build custom reports?
 asked: reports | qweb | pdf | invoice layout | print format | custom report | excel report
@@ -181,21 +232,51 @@ next: Tell me about the export packing documents | Tell me about manufacturing
 Yes, a lot of them: QWeb PDF reports such as packing lists, stickers, material requisition and issue slips, purchase requisitions, Part Lists and Bills of Materials with exact variant details, job cards and work-center load. I match the company's existing paper formats so people don't have to relearn anything.
 
 ## Tell me about the variant pricing
-asked: price check | variant price | last purchase price | price history | purchase price | margin | product variants
-next: Tell me about the variant configurator | Tell me about manufacturing
+asked: price check | price history | purchase price | margin | product variants | price trend | price alert | vendor prices per variant
+next: What price does the configurator show? | Tell me about manufacturing
 
-Five modules that answer "what did we pay last time?" for each **product variant**:
-- The last purchase and sale price, date and vendor on every line.
-- An alert when an RFQ price changes from the last one.
-- A **Price Check** app: type a product, see the last, lowest and highest price per variant, recent buys and the trend.
-- Price visibility by role, so only the right people see cost and margin.
+Modules that answer "what did we pay last time?" for each **product variant**:
+- **Last purchase price, date and vendor per variant**, not one price shared by all variants.
+- **Vendor prices per variant**: a variant's own price wins over that vendor's price for the whole product, and a confirmed order records the price for the variant bought.
+- An **alert on RFQ lines** when the price moves more than a set percentage (5% by default).
+- **Price History** and a **Price Trend** page: every price a variant was quoted, bought and sold at, with up/down against the previous one. The purchase team sees only purchase prices.
 
 ## Tell me about the variant configurator
-asked: variant configurator | configurator | attribute popup | pick variant | choose variant
-next: Tell me about the variant pricing | Tell me about manufacturing
+asked: variant configurator | configurator | attribute popup | pick variant | choose variant | select variant | product variant selection | size and colour | attributes | variant selection rules | variant mode
+next: Which screens can use the variant configurator? | What price does the configurator show? | What if a variant combination doesn't exist?
 buttons: work
 
-Standard Odoo picks products at product level in places like Purchase, BoM and requisitions. I adapted a configurator so users pick the **exact variant** from an attribute pop-up anywhere it's needed (material request lines, manufacturing orders), configurable by an admin.
+Standard Odoo often picks a product, not the exact **variant**. My modules fix that:
+1. An administrator adds a **Variant Selection Rule**: it switches a product field to **Variant Mode** (or back to Normal Mode), on one screen or on every screen, with no code per screen.
+2. On that screen, typing "bolt" lists **Hex Bolt (10 variants)** once, instead of every variant.
+3. Choosing it opens the configurator: pick size, length and finish, and the quantity.
+4. A **price panel** shows what that variant cost. **Confirm** puts the exact variant on the line.
+
+Try it in the Projects section: switch the Transfers rule on and off and see the difference.
+
+## Which screens can use the variant configurator?
+asked: where does the configurator work | which pages | transfers | manufacturing order | scrap | bom | other screens | configure other pages
+next: Tell me about the variant configurator
+
+Bills of Materials, material requests and the Request Materials pop-up have their own adapters. Purchase lines always use it. For anything else there are **rules**: shipped on for manufacturing orders (product, components and by-products), and switched-off examples for **transfers** and **scrap**. A rule can be limited to one view, certain groups or companies, and its **Coverage** box lists every view where it applies.
+
+## What price does the configurator show?
+asked: price in the popup | price panel | vendor price | last bought | last purchase price | other vendors | open rfqs | variant price
+next: Tell me about the variant pricing | Tell me about the variant configurator
+
+For the chosen variant, to the purchase team only:
+- **This vendor**: the vendor price Odoo will propose, with its discount, marked when it's a price for the whole product.
+- **Last bought**: net price, vendor, date and PO.
+- **Other vendors**: the last price of up to 3 others.
+- **Open RFQs** for that variant.
+
+All after discount, without tax. The sales price is hidden in this pop-up, because it isn't a purchase price.
+
+## What if a variant combination doesn't exist?
+asked: invalid combination | combination does not exist | excluded variant | wrong variant | not available variant
+next: Tell me about the variant configurator
+
+The pop-up says **"This combination does not exist"** and Confirm stays disabled, so nobody can order or issue a variant the company doesn't have. In the sample on this page, try an M8 bolt with 50 mm length.
 
 ## Tell me about manufacturing
 asked: manufacturing | mrp | bom | bill of materials | drawing revision | job card | work center | shop floor | production
@@ -296,6 +377,40 @@ next: I have a project for you | How can I contact you?
 buttons: project
 
 Yes. I fix issues quickly after launch, and I'm happy to agree on ongoing support or a block of hours each month for changes and help. We can work out what suits you.
+
+## Are those real screenshots?
+asked: real screenshots | sample data | is this real | demo | live demo | can I see it working | demo data | screens
+next: Can you build something like this for us? | How can I contact you?
+buttons: whatsapp
+
+The screens in the Projects section are **redrawn from the current versions of modules I built**, with sample data (User 1, Hex Bolt, Sample Exports), so no company records are shown. The steps, rules and labels follow the real modules. I'm happy to walk you through it on a call.
+
+## Can you build something like this for us?
+asked: build this for my company | something similar | same for us | make the same | for my factory | for my company | for my business | customize for us | can you do this for me | we need this | do this in our odoo
+next: What do you charge? | How long does a module take?
+buttons: project, whatsapp
+
+Yes. Every company's process is a little different, so I'd start by understanding how yours works today, then shape the module around it, keeping standard Odoo wherever it already fits. Tell me a little about what you need and let's talk.
+
+## Can you do a full ERP implementation?
+asked: full implementation | full cycle | end to end | erp implementation | implement odoo | set up odoo | start odoo from scratch | new odoo setup | go live from scratch
+next: How do you work on a project? | Can you upgrade our Odoo to a newer version?
+buttons: project, whatsapp
+
+I take work through the **full cycle**: understanding the process, designing the flow, building, testing (automated and UAT), going live and training the users. At T&I I've done this for purchase, inventory, manufacturing, sales and export documents. For a full Odoo setup, we'd start with a conversation about your business, then agree on the scope and the order of the apps.
+
+## What is Odoo?
+asked: odoo | what is erp | erp | why odoo | odoo meaning
+next: Which Odoo apps do you know? | Do you work with Odoo Community or Enterprise?
+
+**Odoo** is an open-source **ERP**: one system for sales, purchase, inventory, manufacturing, accounting, HR, website and more, all sharing the same data. It can be extended with custom modules, which is what I build.
+
+## Do you work with accounting, payroll or POS?
+asked: accounting | payroll | pos | point of sale | gst | tax | hr payroll | invoicing | finance
+next: Which Odoo apps do you know? | How can I contact you?
+buttons: whatsapp, email
+
+Most of my work is in Purchase, Inventory, Manufacturing, Sales and the Portal. Accounting I know at a user level, and payroll and POS I haven't built for yet. Tell me what you need directly and I'll be honest about whether I'm the right person.
 
 ## Tell me about your personal projects
 asked: personal projects | side projects | github projects | hospital management | hms | hr portal | your own projects
