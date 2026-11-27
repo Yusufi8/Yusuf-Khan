@@ -1,7 +1,7 @@
 # Yusuf Khan · Portfolio
 
 Personal site of Yusuf Khan, Odoo Techno-Functional Consultant at T&I Projects Private Limited, Coimbatore.
-Live at **https://iyusufkhan.netlify.app**.
+Live at **https://yusufi8.github.io** (GitHub Pages). The older copy at iyusufkhan.netlify.app is paused while Netlify credits are used up.
 
 A static site with no build step.
 
@@ -50,4 +50,12 @@ ready-written WhatsApp or e-mail message. Contact details and the Instagram link
 
 ## Deploy
 
-Netlify publishes the repository root (see `netlify.toml`). Pushing to `main` redeploys the live site.
+GitHub Pages serves the repository root from the `yusufi8.github.io` repository; `.nojekyll` keeps files such as
+`chat/answers.md` exactly as they are. `origin` pushes to both GitHub repositories, so one `git push` updates
+this repository and the live site:
+
+```bash
+git push origin main
+```
+
+`netlify.toml` is kept for the Netlify copy (iyusufkhan.netlify.app), which deploys again when its credits allow.
