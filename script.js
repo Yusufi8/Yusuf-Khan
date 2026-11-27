@@ -69,3 +69,86 @@ const revealObserver = new IntersectionObserver((entries, obs) => {
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Tabs: the problem picker and the "How I work" steps. Arrow keys move between tabs.
+document.querySelectorAll('[data-tabs]').forEach((box) => {
+  const tabs = [...box.querySelectorAll('[role="tab"]')];
+  const bar = box.querySelector('.process-bar i');
+  let timer = null;
+
+  const select = (tab, focus) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (bar) bar.style.width = `${((tabs.indexOf(tab) + 1) / tabs.length) * 100}%`;
+    if (focus) tab.focus();
+  };
+  const stop = () => { clearInterval(timer); timer = null; };
+
+  tabs.forEach((t, i) => {
+    t.type = 'button';
+    t.addEventListener('click', () => { stop(); select(t); });
+    t.addEventListener('keydown', (e) => {
+      const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      if (step) { e.preventDefault(); stop(); select(tabs[(i + step + tabs.length) % tabs.length], true); }
+      if (e.key === 'Home') { e.preventDefault(); stop(); select(tabs[0], true); }
+      if (e.key === 'End') { e.preventDefault(); stop(); select(tabs[tabs.length - 1], true); }
+    });
+  });
+  select(tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0]);
+
+  // "How I work" steps through by itself while in view, until someone clicks a step
+  if (box.hasAttribute('data-autoplay') && !calm) {
+    const next = () => select(tabs[(tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true') + 1) % tabs.length]);
+    new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !timer && !box.dataset.touched) timer = setInterval(next, 4200);
+      if (!entry.isIntersecting) stop();
+    }, { threshold: 0.5 }).observe(box);
+    box.addEventListener('pointerdown', () => { box.dataset.touched = '1'; stop(); });
+    box.addEventListener('focusin', () => { box.dataset.touched = '1'; stop(); });
+  }
+});
+
+// Count the proof numbers up when they come into view
+const counters = document.querySelectorAll('[data-count]');
+if (counters.length && !calm) {
+  const countObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      obs.unobserve(entry.target);
+      const el = entry.target;
+      const end = Number(el.dataset.count);
+      const t0 = performance.now();
+      const tick = (t) => {
+        const p = Math.min((t - t0) / 1100, 1);
+        el.textContent = Math.round(end * (1 - (1 - p) ** 3));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.6 });
+  counters.forEach((el) => { el.textContent = '0'; countObserver.observe(el); });
+}
+
+// Hero card: a material request moving through the workflow
+const flowState = document.getElementById('flow-state');
+if (flowState && !calm) {
+  const states = ['Requested', 'Approved', 'Issued from stores', 'Shortage → PR', 'Quotes compared', 'PO approved'];
+  const flowBar = document.getElementById('flow-bar');
+  let n = 0;
+  const show = () => {
+    flowState.textContent = states[n];
+    flowState.classList.remove('pop');
+    void flowState.offsetWidth;
+    flowState.classList.add('pop');
+    flowBar.style.width = `${((n + 1) / states.length) * 100}%`;
+    n = (n + 1) % states.length;
+  };
+  show();
+  setInterval(show, 2200);
+}
