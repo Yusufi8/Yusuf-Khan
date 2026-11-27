@@ -79,10 +79,10 @@
       </a>
       <nav aria-label="Primary">
         <ul class="nav-links" id="nav-links">
-          <li><a href="#solutions">Solutions</a></li>
-          <li><a href="#work">Work</a></li>
+          <li><a href="#work">Projects</a></li>
           <li><a href="#process">How I work</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#contact" class="nav-cta">Let's talk</a></li>
         </ul>
       </nav>
@@ -129,13 +129,6 @@
             <img src="images/profile.jpg" alt="Portrait of Yusuf Khan" width="640" height="640">
           </picture>
 
-          <!-- A material request moving through the workflow -->
-          <div class="flow-card" aria-hidden="true">
-            <span class="flow-doc mono">MR/2026/0142</span>
-            <span class="flow-state" id="flow-state">Approved</span>
-            <span class="flow-bar"><i id="flow-bar"></i></span>
-          </div>
-
           <div class="hero-chat">
             <p class="hero-chat-bubble">Hi, I'm Yusuf 👋 Ask me anything about my work.</p>
             <div class="hero-chat-chips">
@@ -148,142 +141,15 @@
       </div>
 
       <div class="container">
-        <dl class="proof">
-          <div><dt>Custom Odoo modules</dt><dd><span data-count="30">30</span>+</dd></div>
-          <div><dt>Automated tests</dt><dd><span data-count="580">580</span>+</dd></div>
-          <div><dt>Business areas</dt><dd><span data-count="6">6</span></dd></div>
-          <div><dt>Odoo versions</dt><dd>16 &amp; 18</dd></div>
+        <dl class="proof proof-facts">
+          <div><dt>Work in</dt><dd>Purchase · Inventory · Manufacturing · Sales</dd></div>
+          <div><dt>Odoo</dt><dd>16 · 18 · 19 · 20 <small>(learning)</small></dd></div>
+          <div><dt>Based in</dt><dd>Chennai · remote or hybrid</dd></div>
+          <div><dt>Languages</dt><dd>English · Tamil · Hindi · Urdu</dd></div>
         </dl>
       </div>
     </section>
 
-    <!-- Solutions -->
-    <section id="solutions" class="section section-alt">
-      <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Solutions</p>
-          <h2>What's slowing your business down?</h2>
-          <p class="section-sub">Pick a problem to see how I solved it in Odoo.</p>
-        </header>
-
-        <div class="solve" data-tabs>
-          <div class="solve-list" role="tablist" aria-label="Business problems">
-            <button role="tab" id="t-req" aria-controls="p-req" aria-selected="true">Material requests on paper and WhatsApp</button>
-            <button role="tab" id="t-appr" aria-controls="p-appr" aria-selected="false" tabindex="-1">Approvals stuck in e-mail</button>
-            <button role="tab" id="t-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1">Managers can't see what's late</button>
-            <button role="tab" id="t-login" aria-controls="p-login" aria-selected="false" tabindex="-1">Many people share one login</button>
-            <button role="tab" id="t-pack" aria-controls="p-pack" aria-selected="false" tabindex="-1">Export documents typed in Word</button>
-            <button role="tab" id="t-price" aria-controls="p-price" aria-selected="false" tabindex="-1">Buying at the wrong price</button>
-            <button role="tab" id="t-var" aria-controls="p-var" aria-selected="false" tabindex="-1">The wrong product variant gets picked</button>
-            <button role="tab" id="t-access" aria-controls="p-access" aria-selected="false" tabindex="-1">Anyone can change master data</button>
-          </div>
-
-          <div class="solve-panels">
-            <div class="solve-panel" role="tabpanel" id="p-req" aria-labelledby="t-req">
-              <p class="solve-tag mono">Requisition to procurement · 8 modules</p>
-              <h3>One flow from request to purchase order</h3>
-              <ol class="flow">
-                <li style="--i:0">Request</li><li style="--i:1">Approve</li><li style="--i:2">Stores issue</li><li style="--i:3">Shortage → PR</li><li style="--i:4">Vendor quotes</li><li style="--i:5">PO by amount</li>
-              </ol>
-              <p>Production raises a request, the manager approves it, stores issue what's in stock, and anything short goes to purchasing, where vendor quotes are compared and the PO is approved by amount. Every step is timed and logged.</p>
-              <div class="solve-acts">
-                <a class="btn btn-ghost btn-sm" href="work/material-requisition/">Case study<svg><use href="#i-arrow"/></svg></a>
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the requisition workflow"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-
-            <div class="solve-panel" role="tabpanel" id="p-appr" aria-labelledby="t-appr" hidden>
-              <p class="solve-tag mono">Approval engine</p>
-              <h3>Approve from the e-mail, in one click</h3>
-              <ol class="flow">
-                <li style="--i:0">E-mail sent</li><li style="--i:1">Approve / Reject</li><li style="--i:2">Signed &amp; timed</li><li style="--i:3">Next approver</li>
-              </ol>
-              <p>Approvers get <strong>Approve</strong> and <strong>Reject</strong> buttons in the e-mail. Each link is signed and works only once. Bigger amounts go to a higher approver automatically, and every decision records who, when and their signature.</p>
-              <div class="solve-acts">
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="How do approvals by e-mail work?"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-
-            <div class="solve-panel" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
-                <p class="solve-tag mono">OWL · TI Dashboards › Management</p>
-                <h3>One page for directors and managers</h3>
-                <ol class="flow">
-                  <li style="--i:0">Pick a period</li><li style="--i:1">Compare</li><li style="--i:2">7 tabs by role</li><li style="--i:3">Process flow</li><li style="--i:4">Open the records</li>
-                </ol>
-                <p>What was done in a period and what is open now, for Sales, Purchase, Inventory, Manufacturing and Requisitions, compared with the period before. Each role sees only its own tabs, and every number opens the records behind it.</p>
-                <div class="solve-acts">
-                <a class="btn btn-ghost btn-sm" href="#work">Try it<svg><use href="#i-arrow"/></svg></a>
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the dashboards"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-
-            <div class="solve-panel" role="tabpanel" id="p-login" aria-labelledby="t-login" hidden>
-                <p class="solve-tag mono">People tracking</p>
-                <h3>Know who really did it, even on a shared login</h3>
-                <ol class="flow">
-                  <li style="--i:0">Log in</li><li style="--i:1">Pick your name</li><li style="--i:2">Enter your PIN</li><li style="--i:3">Every action recorded</li>
-                </ol>
-                <p>After logging in, each person picks their name and enters their own 4-digit Login PIN. Everything they do is recorded under their name, the others on that login don't see their documents, and directors get Work by Person and Activities reports.</p>
-                <div class="solve-acts">
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about people tracking on a shared login"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-
-            <div class="solve-panel" role="tabpanel" id="p-pack" aria-labelledby="t-pack" hidden>
-                <p class="solve-tag mono">QWeb reports · Packing List &amp; Packing Slip</p>
-                <h3>Export packing lists and stickers, straight from Odoo</h3>
-                <ol class="flow">
-                  <li style="--i:0">Fill Export Defaults</li><li style="--i:1">Fetch Goods</li><li style="--i:2">Packing details</li><li style="--i:3">Print PL</li><li style="--i:4">Print Packing Slip</li>
-                </ol>
-                <p>A Packing List tab on the delivery in four steps. Page 2 can never pack more than page 1, boxes of spares list their contents, and weights are calculated as you type. The Packing List and one sticker per package print in the company's export layout.</p>
-                <div class="solve-acts">
-                <a class="btn btn-ghost btn-sm" href="work/export-packing/">Case study<svg><use href="#i-arrow"/></svg></a>
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the export packing documents"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-
-            <div class="solve-panel" role="tabpanel" id="p-price" aria-labelledby="t-price" hidden>
-              <p class="solve-tag mono">Variant price suite · 5 modules</p>
-              <h3>See what you paid last time, for the exact variant</h3>
-              <ol class="flow">
-                <li style="--i:0">Last price on every line</li><li style="--i:1">Alert on RFQ change</li><li style="--i:2">Price Check app</li><li style="--i:3">Visible by role</li>
-              </ol>
-              <p>The last purchase and sale price, date and vendor show on every line, an RFQ warns when a price changes, and a Price Check app shows the lowest, highest and latest price per variant with the trend.</p>
-              <div class="solve-acts">
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the variant pricing"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-
-            <div class="solve-panel" role="tabpanel" id="p-var" aria-labelledby="t-var" hidden>
-                <p class="solve-tag mono">Variant configurator · Variant Selection Rules</p>
-                <h3>Pick the exact variant, and see what it cost</h3>
-                <ol class="flow">
-                  <li style="--i:0">Rule: Variant Mode</li><li style="--i:1">Attribute pop-up</li><li style="--i:2">Price panel</li><li style="--i:3">Exact variant on the line</li>
-                </ol>
-                <p>An administrator switches any screen's product field to Variant Mode with a rule, no code per screen. The pop-up picks the exact variant and shows this vendor's price, the last price paid, other vendors and open RFQs.</p>
-                <div class="solve-acts">
-                <a class="btn btn-ghost btn-sm" href="work/variant-configurator/">Case study<svg><use href="#i-arrow"/></svg></a>
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the variant configurator"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-
-            <div class="solve-panel" role="tabpanel" id="p-access" aria-labelledby="t-access" hidden>
-              <p class="solve-tag mono">Access rights</p>
-              <h3>One role per job, and a guard on master data</h3>
-              <ol class="flow">
-                <li style="--i:0">Audit 5 layers</li><li style="--i:1">Role per job</li><li style="--i:2">Timed exceptions</li><li style="--i:3">Guard: Off · Monitor · Enforce</li>
-              </ol>
-              <p>I audited live security across groups, access rules, record rules, menus and fields, then built job roles, exceptions that switch themselves off, and a guard on products, contacts, vendor prices and drawings, with every change logged.</p>
-              <div class="solve-acts">
-                <button class="btn btn-ghost btn-sm" type="button" data-chat="How do you handle access rights?"><svg><use href="#i-chat"/></svg>Ask about it</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work -->
     <section id="work" class="section">
       <div class="container">
         <header class="section-head">
@@ -301,7 +167,7 @@
               <p>Workers ask for material from a short pop-up. The Production Manager approves, stores check stock and issue it, and anything short goes to a director. Once approved, a purchase requisition is created and sent to Purchase automatically. Every step is recorded with who did it and when.</p>
               </div>
               <div class="project-side">
-              <ul class="case-points"><li>8 modules, 260+ automated tests</li><li>Approve or refuse straight from the e-mail</li><li>Two paths: all in stock, or short and through purchase</li></ul>
+              <ul class="case-points"><li>Request, approval, stores issue and purchase in one flow</li><li>Approve or refuse straight from the e-mail</li><li>Two paths: all in stock, or short and through purchase</li></ul>
               <p class="project-try"><span class="mono">Try it</span><span>In the pop-up, press <b>Submit Request</b> and move the request step by step: the Welding Rod is short, so it takes the director path. Set its Qty to 8 or less and it goes straight to the issue.</span></p>
               <div class="case-actions"><a class="btn btn-primary btn-sm" href="work/material-requisition/">View project<svg><use href="#i-arrow"/></svg></a><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the requisition workflow"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
               </div>
@@ -337,7 +203,7 @@
               <p>The export team used to type packing lists in Word. Now a delivery has a <b>Packing List</b> tab in four steps, and Odoo prints the <b>Packing List (PL)</b> and one <b>Packing Slip (PS)</b> sticker per package in the company's export layout, with weights calculated as you type.</p>
               </div>
               <div class="project-side">
-              <ul class="case-points"><li>Page 2 can divide page 1, never pack more</li><li>Boxes of mixed spares with their contents</li><li>More than 20 versions, each checked on a copy of the live database first</li></ul>
+              <ul class="case-points"><li>Page 2 can divide page 1, never pack more</li><li>Boxes of mixed spares with their contents</li><li>Every version checked on a copy of the live database first</li></ul>
               <p class="project-try"><span class="mono">Try it</span><span>Press <b>Fill Export Defaults</b>, <b>Fetch Goods</b> and <b>Add all products</b>. Change a Qty or Gross %, then <b>Print PL</b> or <b>Print Packing Slip</b>.</span></p>
               <div class="case-actions"><a class="btn btn-primary btn-sm" href="work/export-packing/">View project<svg><use href="#i-arrow"/></svg></a><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the export packing documents"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
               </div>
@@ -355,7 +221,7 @@
               <p>One page for directors and managers: what was done in a period and what is open now, per area. Each role sees only its own tabs, every number can be compared with another period, and every number opens the records behind it. Facts only, no ranking of people.</p>
               </div>
               <div class="project-side">
-              <ul class="case-points"><li>7 tabs, from Sales to the Process flow</li><li>Filters by period, department and employee, also on shared logins</li><li>Each tab is read with the user's own access rights</li></ul>
+              <ul class="case-points"><li>Sales, Purchase, Inventory, Manufacturing, Requisitions and Process flow</li><li>Filters by period, department and employee, also on shared logins</li><li>Each tab is read with the user's own access rights</li></ul>
               <p class="project-try"><span class="mono">Try it</span><span>Change the <b>Period</b> or <b>Compare with</b>, open a tab, press a <b>?</b>. Then open it as a Purchase or Sales Manager and see the tabs change.</span></p>
               <div class="case-actions"><button class="btn btn-ghost btn-sm" type="button" data-chat="Tell me about the dashboards"><svg><use href="#i-chat"/></svg>Ask about it</button></div>
               </div>
@@ -397,7 +263,7 @@
 
         <h3 class="sub-head">More of my Odoo work <span class="sub-note">Tap one to ask about it</span></h3>
         <ul class="mini-grid">
-          <li class="mini reveal"><button type="button" data-chat="Tell me about the variant pricing"><span class="mono">Odoo 16 · 5 modules</span><strong>Variant price suite</strong><span>Last price, alerts, Price Check app</span></button></li>
+          <li class="mini reveal"><button type="button" data-chat="Tell me about the variant pricing"><span class="mono">Odoo 16 · Purchase &amp; Sales</span><strong>Variant price history</strong><span>Last price, alerts, Price Check app</span></button></li>
           <li class="mini reveal"><button type="button" data-chat="Tell me about manufacturing"><span class="mono">Odoo 16 · MRP</span><strong>Manufacturing reports</strong><span>Part Lists, drawing revisions, job cards</span></button></li>
           <li class="mini reveal"><button type="button" data-chat="How do you handle access rights?"><span class="mono">Odoo 16 · Security</span><strong>Access roles</strong><span>Job roles and a master-data guard</span></button></li>
           <li class="mini reveal"><button type="button" data-chat="Tell me about your personal projects"><span class="mono">Odoo 18 · Website</span><strong>Hospital Management</strong><span>Patients, appointments, patient portal</span></button></li>
@@ -420,17 +286,47 @@
             <button role="tab" id="s1" aria-controls="sp1" aria-selected="true"><span class="mono">01</span>Understand</button>
             <button role="tab" id="s2" aria-controls="sp2" aria-selected="false" tabindex="-1"><span class="mono">02</span>Design</button>
             <button role="tab" id="s3" aria-controls="sp3" aria-selected="false" tabindex="-1"><span class="mono">03</span>Build</button>
-            <button role="tab" id="s4" aria-controls="sp4" aria-selected="false" tabindex="-1"><span class="mono">04</span>Test</button>
+            <button role="tab" id="s4" aria-controls="sp4" aria-selected="false" tabindex="-1"><span class="mono">04</span>Check</button>
             <button role="tab" id="s5" aria-controls="sp5" aria-selected="false" tabindex="-1"><span class="mono">05</span>Go live</button>
             <button role="tab" id="s6" aria-controls="sp6" aria-selected="false" tabindex="-1"><span class="mono">06</span>Train &amp; support</button>
           </div>
           <div class="process-bar" aria-hidden="true"><i></i></div>
-          <div class="process-panel" role="tabpanel" id="sp1" aria-labelledby="s1"><h3>I talk to the people who do the work</h3><p>Before any code, I sit with the users, follow a document through the real process, and note what standard Odoo already does well.</p><p class="process-out mono">You get: a clear picture of the process and what really needs building</p></div>
-          <div class="process-panel" role="tabpanel" id="sp2" aria-labelledby="s2" hidden><h3>A simple plan we agree on</h3><p>The flow, the screens, the approvals and the reports, drawn out and agreed before I build, so there are no surprises.</p><p class="process-out mono">You get: a workflow diagram and a scope you can sign off</p></div>
-          <div class="process-panel" role="tabpanel" id="sp3" aria-labelledby="s3" hidden><h3>Clean, upgrade-friendly modules</h3><p>Custom modules in Python, XML and OWL that extend standard Odoo instead of fighting it, with upgrade scripts for every version.</p><p class="process-out mono">You get: modules in Git, with a changelog</p></div>
-          <div class="process-panel" role="tabpanel" id="sp4" aria-labelledby="s4" hidden><h3>Tested by code, then by your users</h3><p>Automated tests run before every release (more than 580 across my T&amp;I modules), then your team tries it in a UAT copy with step-by-step test sheets.</p><p class="process-out mono">You get: test results and UAT sheets</p></div>
-          <div class="process-panel" role="tabpanel" id="sp5" aria-labelledby="s5" hidden><h3>A rehearsed go-live</h3><p>A full backup, a rehearsal on a copy of your real database, version checks and a written rollback plan. Then the real install, and checks after it.</p><p class="process-out mono">You get: a release package with a start-here guide and checklist</p></div>
-          <div class="process-panel" role="tabpanel" id="sp6" aria-labelledby="s6" hidden><h3>People who know how to use it</h3><p>Simple user guides and training in English, Tamil or Hindi, and quick fixes after launch. Ongoing support can be arranged however suits you.</p><p class="process-out mono">You get: trained users and someone to call</p></div>
+          <div class="process-panel" role="tabpanel" id="sp1" aria-labelledby="s1">
+            <h3>I talk to the people who do the work</h3>
+            <p>Before any code, I sit with the users, follow one real document from start to end, and note what standard Odoo already does well, so we only build what is missing.</p>
+            <p class="process-eg"><span class="mono">From my work</span>Material requests: I mapped every step, from the shop-floor request to stores and purchase, before building the modules.</p>
+            <p class="process-out mono">You get: A clear picture of the process and what really needs building</p>
+          </div>
+          <div class="process-panel" role="tabpanel" id="sp2" aria-labelledby="s2" hidden>
+            <h3>A simple plan we agree on</h3>
+            <p>The flow, the screens, the approvals and the printouts, drawn out and agreed with you before I build, so there are no surprises later.</p>
+            <p class="process-eg"><span class="mono">From my work</span>Export packing: the Packing List was matched line by line to the export team's own EX053 template.</p>
+            <p class="process-out mono">You get: A workflow diagram and a scope you can sign off</p>
+          </div>
+          <div class="process-panel" role="tabpanel" id="sp3" aria-labelledby="s3" hidden>
+            <h3>Clean modules that grow with you</h3>
+            <p>Custom modules in Python, XML and OWL that extend standard Odoo instead of fighting it, configurable by your admin wherever possible, with an upgrade script for every version.</p>
+            <p class="process-eg"><span class="mono">From my work</span>Variant configurator: an administrator switches any screen to variant selection with a rule, no new code per screen.</p>
+            <p class="process-out mono">You get: Modules in Git, with a changelog for every version</p>
+          </div>
+          <div class="process-panel" role="tabpanel" id="sp4" aria-labelledby="s4" hidden>
+            <h3>Checked, then tried by your team</h3>
+            <p>Every release is checked on a copy of your real data before it goes anywhere near the live system. Then your team tries it in a UAT copy with step-by-step test sheets.</p>
+            <p class="process-eg"><span class="mono">From my work</span>Export packing: every version was checked on a copy of the live database: same page 2, same stickers, same totals.</p>
+            <p class="process-out mono">You get: UAT sheets and a copy you can try safely</p>
+          </div>
+          <div class="process-panel" role="tabpanel" id="sp5" aria-labelledby="s5" hidden>
+            <h3>A rehearsed go-live</h3>
+            <p>A full backup, a rehearsal on a copy of your real database, version checks and a written rollback plan. Then the real install, and checks right after it.</p>
+            <p class="process-eg"><span class="mono">From my work</span>Each T&amp;I release went out as a package with a start-here guide, a checklist and a changelog.</p>
+            <p class="process-out mono">You get: A release package with a start-here guide and checklist</p>
+          </div>
+          <div class="process-panel" role="tabpanel" id="sp6" aria-labelledby="s6" hidden>
+            <h3>People who know how to use it</h3>
+            <p>Short user guides for each role and training in English, Tamil or Hindi, in person or online. Quick fixes after launch, and ongoing support however suits you.</p>
+            <p class="process-eg"><span class="mono">From my work</span>At T&amp;I I train the teams who use each module, in the language they are most comfortable with.</p>
+            <p class="process-out mono">You get: Trained users and someone to call</p>
+          </div>
         </div>
       </div>
     </section>
@@ -514,7 +410,8 @@
         <ul class="versions reveal" aria-label="Odoo versions">
           <li class="v-on"><strong>Odoo 16</strong><span>Enterprise, every day at work</span></li>
           <li class="v-on"><strong>Odoo 18</strong><span>My own modules</span></li>
-          <li class="v-learn"><strong>Odoo 19</strong><span>Learning now</span></li>
+          <li class="v-on"><strong>Odoo 19</strong><span>Know most of it</span></li>
+          <li class="v-learn"><strong>Odoo 20</strong><span>Learning now</span></li>
         </ul>
 
         <div class="skills">
@@ -575,10 +472,10 @@
         <p>Odoo Techno-Functional Consultant · Odoo Developer<br>Chennai, India</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#solutions">Solutions</a>
-        <a href="#work">Work</a>
+        <a href="#work">Projects</a>
         <a href="#process">How I work</a>
         <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
       <ul class="socials">

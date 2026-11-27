@@ -60,7 +60,7 @@ I've been working with Odoo since **July 2025**:
 - **Odoo Techno-Functional Consultant**, T&I Projects Private Limited, Coimbatore (Apr 2026 to now)
 - **Odoo Technical Trainee**, Tidal Wave Infotech, Chennai (Jul 2025 to Apr 2026)
 
-In that time I've written about **30 custom Odoo modules** with more than **580 automated tests**. My CV has the details.
+In that time I've built custom Odoo modules for purchase, inventory, manufacturing, sales and export documents, and taken them live. My CV has the details.
 
 ## What did you do at Tidal Wave Infotech?
 asked: tidal wave | tidal wave infotech | trainee | technical trainee | traineeship | intern | internship | first job
@@ -92,12 +92,13 @@ next: Can you work remotely? | How can I contact you?
 English and Hindi fluently. **Tamil** and **Urdu** are my native languages.
 
 ## Which Odoo versions do you work with?
-asked: odoo version | odoo 16 | odoo 17 | odoo 18 | odoo 19 | latest odoo | versions
+asked: odoo version | odoo 16 | odoo 17 | odoo 18 | odoo 19 | odoo 20 | latest odoo | versions | newest version
 next: Do you work with Odoo Community or Enterprise? | Can you upgrade our Odoo to a newer version?
 
 - **Odoo 16 Enterprise** every day at work.
 - **Odoo 18** for my own modules (Hospital Management with a patient website, an HR and time-off portal, repeat purchase orders).
-- I'm learning **Odoo 19** now.
+- **Odoo 19**: I know most of it.
+- **Odoo 20**: I'm learning it now.
 
 ## Do you work with Odoo Community or Enterprise?
 asked: community | enterprise | odoo.sh | on premise | self hosted | hosting
@@ -120,7 +121,7 @@ Some highlights from T&I Projects (all Odoo 16). You can click through the first
 - **Material & purchase requisition**: a short pop-up to ask for material, manager approval (also from e-mail), stock check and issue, and a director-approved purchase requisition for anything short.
 - **Variant configurator with purchase prices**: rules that switch any screen to pick the exact variant, and a pop-up that shows what each variant cost.
 - **Export packing**: the Packing List and one Packing Slip sticker per package, in the company's export layout.
-- **Management dashboard**: one page for directors and managers, seven tabs, by period and role.
+- **Management dashboard**: one page for directors and managers, by period and role.
 - **People tracking with Login PIN**: on a shared login, every step is saved under the real person.
 - Also: **variant price history**, **manufacturing reports** and **access roles**.
 
@@ -129,7 +130,7 @@ asked: material requisition | material request | purchase requisition | requisit
 next: How does someone request material? | What happens when stock is short? | Can I see who did each step?
 buttons: work
 
-It's my biggest project, a set of **8 Odoo modules** that replaces paper and chat messages for material:
+It's my biggest project: a set of Odoo modules that replaces paper and chat messages for material:
 1. A worker asks for material from a short **Request Materials** pop-up.
 2. The **Production Manager approves**, in Odoo or straight from the e-mail.
 3. The **Inventory Manager** checks stock for each line, reserves it and issues it, with issue slips.
@@ -137,7 +138,7 @@ It's my biggest project, a set of **8 Odoo modules** that replaces paper and cha
 5. Purchasing compares **vendor quotes**, raises the RFQ, and the **PO is approved by amount**.
 6. The person who asked marks it received, and the request is closed.
 
-Every step is recorded with who and when. The modules have more than 260 automated tests. You can try both paths (all in stock, or short) in the Projects section.
+Every step is recorded with who and when. You can try both paths (all in stock, or short) in the Projects section.
 
 ## How does someone request material?
 asked: request materials | request wizard | wizard | popup | pop-up | how to raise a request | create material request | new request | form to request
@@ -179,7 +180,7 @@ next: What can the dashboard filter by? | Tell me about the requisition workflow
 buttons: work
 
 The **Management** page (TI Dashboards, built in OWL) is one page for directors and managers: what was done in a period and what is open now, per area.
-- **Seven tabs**: Overview, Sales, Purchase, Inventory, Manufacturing, Requisitions and Process flow.
+- **Tabs**: Overview, Sales, Purchase, Inventory, Manufacturing, Requisitions and Process flow.
 - **Each role sees only its own tabs**: a Purchase Manager sees Overview, Purchase, Requisitions and Process flow; a Sales Manager sees Overview and Sales. The server enforces it.
 - Every number can be **compared** with the previous period or the same period last year, and every number **opens the records** behind it.
 - **Process flow** shows each step from request to issue, and from shortage to purchase to delivery: what's waiting now and the average working days per step.
@@ -223,7 +224,7 @@ The export team used to type packing lists in Word. Now every delivery has a **P
 3. **Page 2**: Add all products fills each package group from the product's packing data. A row can never pack more than page 1, and a box of spares lists its contents.
 4. **Print PL** (the Packing List) and **Print Packing Slip** (one sticker per package), in the company's export layout.
 
-Net and gross weights are calculated as you type. More than 20 versions so far, each checked on a copy of the live database first. Try it in the Projects section.
+Net and gross weights are calculated as you type, and every version was checked on a copy of the live database first. Try it in the Projects section.
 
 ## Do you build custom reports?
 asked: reports | qweb | pdf | invoice layout | print format | custom report | excel report
@@ -302,7 +303,7 @@ I test access changes in a separate lab copy before they touch the real system.
 asked: testing | tests | unit tests | quality | bugs | uat | user acceptance testing | qa
 next: How do you take a module live? | How do you work on a project?
 
-Every module has **automated tests** (more than 580 across my T&I modules) that run before each release. Then the users try it in a **UAT** copy with step-by-step test sheets, and only then does it go live.
+Every release is **checked on a copy of the real data** before it goes near the live system. Then the users try it in a **UAT** copy with step-by-step test sheets, and only then does it go live. For the export packing module, every version was compared with the live printouts: same page 2, same stickers, same totals.
 
 ## How do you take a module live?
 asked: deployment | go live | go-live | release | rollback | backup | production deployment | install on server | devops
@@ -321,7 +322,7 @@ asked: migration | upgrade | migrate | move to odoo 18 | move to odoo 19 | versi
 next: Which Odoo versions do you work with? | How do you take a module live?
 buttons: project
 
-I write upgrade scripts for my own modules with every release (13 of them on the packing module alone), and I build on both Odoo 16 and 18. For a version upgrade I'd start by **reviewing your custom modules and data**, then port and test them on a copy before you move. Tell me your current version and what's customised, and I'll tell you honestly what's involved.
+I write an upgrade script for my own modules with every release, I build on Odoo 16 and 18, I know most of Odoo 19 and I'm learning Odoo 20. For a version upgrade I'd start by **reviewing your custom modules and data**, then port and test them on a copy before you move. Tell me your current version and what's customised, and I'll tell you honestly what's involved.
 
 ## Do you know JavaScript and OWL?
 asked: javascript | owl | frontend | js | web client | widgets | ui
@@ -361,7 +362,7 @@ next: How do you test your work? | I have a project for you
 1. **Understand**: I talk to the people who do the work and map the process.
 2. **Design**: a simple plan of the flow, the screens and the reports, agreed before coding.
 3. **Build**: custom modules, keeping standard Odoo wherever it already works.
-4. **Test**: automated tests, then UAT with your users.
+4. **Check**: on a copy of your real data, then UAT with your users.
 5. **Go live**: rehearsed on a copy, with backups and a rollback plan.
 6. **Train and support**: user guides, training, and quick fixes after launch.
 
@@ -397,7 +398,7 @@ asked: full implementation | full cycle | end to end | erp implementation | impl
 next: How do you work on a project? | Can you upgrade our Odoo to a newer version?
 buttons: project, whatsapp
 
-I take work through the **full cycle**: understanding the process, designing the flow, building, testing (automated and UAT), going live and training the users. At T&I I've done this for purchase, inventory, manufacturing, sales and export documents. For a full Odoo setup, we'd start with a conversation about your business, then agree on the scope and the order of the apps.
+I take work through the **full cycle**: understanding the process, designing the flow, building, checking it on a copy of your data, UAT with your users, going live and training the users. At T&I I've done this for purchase, inventory, manufacturing, sales and export documents. For a full Odoo setup, we'd start with a conversation about your business, then agree on the scope and the order of the apps.
 
 ## What is Odoo?
 asked: odoo | what is erp | erp | why odoo | odoo meaning
@@ -482,7 +483,7 @@ I'd rather discuss salary, notice period and start date with you directly. Send 
 asked: why you | why hire you | what makes you different | strengths | advantages | your strength
 next: How do you work on a project? | What have you built?
 
-Because I care whether people actually use what I build. I map the real process before writing code, keep standard Odoo wherever it already works, test everything (more than 580 automated tests so far), rehearse every go-live and train the users myself. And I explain things in plain language, in English, Tamil or Hindi.
+Because I care whether people actually use what I build. I map the real process before writing code, keep standard Odoo wherever it already works, check every release on a copy of the real data, rehearse every go-live and train the users myself. And I explain things in plain language, in English, Tamil or Hindi.
 
 ## What do you do outside work?
 asked: hobbies | free time | interests | weekend | personal life | outside work | fun
