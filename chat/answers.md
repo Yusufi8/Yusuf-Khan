@@ -100,6 +100,8 @@ next: Do you work with Odoo Community or Enterprise? | Can you upgrade our Odoo 
 - **Odoo 19**: I know most of it.
 - **Odoo 20**: I'm learning it now.
 
+Odoo 17 sits between the 16 and 18 I build on, so I can work on it too.
+
 ## Do you work with Odoo Community or Enterprise?
 asked: community | enterprise | odoo.sh | on premise | self hosted | hosting
 next: Which Odoo versions do you work with? | How do you take a module live?
@@ -380,7 +382,7 @@ buttons: project
 Yes. I fix issues quickly after launch, and I'm happy to agree on ongoing support or a block of hours each month for changes and help. We can work out what suits you.
 
 ## Are those real screenshots?
-asked: real screenshots | sample data | is this real | demo | live demo | can I see it working | demo data | screens
+asked: real screenshots | sample data | is this real | demo data | screens | fake data
 next: Can you build something like this for us? | How can I contact you?
 buttons: whatsapp
 
@@ -392,6 +394,64 @@ next: What do you charge? | How long does a module take?
 buttons: project, whatsapp
 
 Yes. Every company's process is a little different, so I'd start by understanding how yours works today, then shape the module around it, keeping standard Odoo wherever it already fits. Tell me a little about what you need and let's talk.
+
+## Can you fix problems in our existing Odoo?
+asked: bug fix | fix issue | fix bug | existing odoo | errors | something broken | not working | troubleshoot | odoo issue | error message
+next: Do you handle urgent fixes? | How do we start working together?
+buttons: whatsapp, email
+
+Yes. At T&I I'm the first point of contact for Odoo users: I find the cause of each issue, then fix it or route it to the right person. That covers purchase orders, vendor bills, receipts, returns, stock adjustments and access rights. Fixes are tried on a copy of your data before they touch the live system. Send me what's happening (a screenshot helps) and I'll tell you what I think it is.
+
+## Can you import or clean up our data?
+asked: data migration | import data | data import | data cleanup | clean data | excel import | master data | import products | contacts cleanup | duplicate records
+next: Can you upgrade our Odoo to a newer version? | How do we start working together?
+buttons: project
+
+Yes. At T&I I cleaned up contact and product master data and set up sales teams, so records are consistent. For an import, I map your spreadsheet columns to Odoo fields, try the import on a copy first and show you the result before it goes into the live database.
+
+## Can you work with our team?
+asked: work with our developers | your team | agency | odoo partner | subcontract | white label | collaborate | join our team | work with other developers
+next: Are you available for freelance projects? | How do we start working together?
+buttons: project, whatsapp
+
+Yes. I work in Git with a changelog for every version, write a start-here guide with each release, and send short progress updates (at T&I I report weekly through Jira). Happy to work alongside your developers, or for an Odoo partner on their clients' projects.
+
+## Will you sign an NDA?
+asked: nda | non disclosure | confidentiality | confidential | privacy | data security | our data safe | secrets
+next: How do we start working together?
+buttons: whatsapp
+
+Yes, of course. Your data and code stay private. You can see how I treat it on this site: every screen in the Projects section uses sample data, never a real record from the company I work for.
+
+## Do you handle urgent fixes?
+asked: urgent | emergency | asap | weekend | after hours | quick fix | production down | live issue | immediately
+next: Can you fix problems in our existing Odoo? | How can I contact you?
+buttons: whatsapp, call
+
+Message me on **WhatsApp** with what's wrong. A problem on a live system comes first, and I'll tell you quickly whether I can take it and how soon. For ongoing work, we can agree on response times up front.
+
+## Can you help with Odoo Email Marketing?
+asked: email marketing | mass mailing | newsletter | marketing emails | email templates | email campaigns
+next: Which Odoo apps do you know? | Can you train our users?
+
+Yes. At T&I I trained the marketing team on Odoo Email Marketing and prepare their email templates.
+
+## Can I see a demo?
+asked: demo | live demo | show me | video call | walkthrough | screen share | can I see it working | presentation
+next: Are those real screenshots? | How can I contact you?
+buttons: whatsapp, email
+
+Start with the **Projects** section of this page: five screens you can click through, redrawn from modules I built. For anything more, I'm happy to walk you through it on a video call. Message me and we'll pick a time.
+
+## How do we start working together?
+asked: how to start | first step | next steps | onboarding | kick off | what do you need from us | process to hire | get started | start a project
+next: What do you charge? | How long does a module take?
+buttons: project, whatsapp, email
+
+1. Send me a message on WhatsApp or e-mail with what you need, in your own words.
+2. A short call where I ask how the process works today.
+3. I send back what I'd build, a **quote and a timeline**.
+4. Once you're happy with it, I start, with updates as I go.
 
 ## Can you do a full ERP implementation?
 asked: full implementation | full cycle | end to end | erp implementation | implement odoo | set up odoo | start odoo from scratch | new odoo setup | go live from scratch
